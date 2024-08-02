@@ -9,7 +9,7 @@
   cursor: pointer; /* Pointer cursor on hover */
   border-radius: 8px; 
   transition: background-color 0.3s; /* Smooth background color transition */
-  min-width: 200px;
+  min-width: 180px;
 }
 
 .button:hover {

@@ -16,7 +16,7 @@ body h1 {
 }
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1.5fr));
+    grid-template-columns: repeat(auto-fit, minmax(20em, 1.5fr));
     grid-auto-rows: 0.5fr;
     grid-gap: 2em;
     justify-content: center;
