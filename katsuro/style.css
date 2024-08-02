@@ -1,3 +1,5 @@
+@import "../util/button.css";
+
 * {
     background-color: #080812;
     color: white;
@@ -44,6 +46,14 @@
 .right * {
     background-color: transparent;
 }
+.bottom {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.1em 1em;
+    border-radius: 1em;
+}
+.bottom h4 {
+    background-color: transparent;
+}
 .bottom p {
-    margin: -0.2em 0em;
+    background-color: transparent;
 }

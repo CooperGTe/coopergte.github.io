@@ -1,24 +1,8 @@
+@import "./util/button.css";
+
 * {
     font-size: 15px;
     color: white;
-}
-.button {
-  background-color: #59a2ae;   
-  color: white;
-  padding: 15px 32px;
-  text-decoration: none; 
-  display: inline-block; /* Make the button inline with other elements */
-  font-size: 16px; 
-  margin: 4px 2px;
-  cursor: pointer; /* Pointer cursor on hover */
-  border-radius: 8px; 
-  transition: background-color 0.3s; /* Smooth background color transition */
-  min-width: 200px;
-}
-
-.button:hover {
-  background-color: #81623c; /* Darker green on hover */
-}
 }
 body {
     padding: 20px;
@@ -57,7 +41,6 @@ body h1 {
 }
 .Page2 {
     background-color: rgba(255,255,255,0.02);
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     border-radius: 1em;
     padding: 1em;
 }
