@@ -1,0 +1,49 @@
+* {
+    background-color: #080812;
+    color: white;
+}
+.image {
+    background-color: #6fadb7;
+      padding: 2em 0em;
+}
+.image img {
+    border-radius: 20em;
+    margin-bottom:-6em;
+}
+.pfp {
+    padding: 10px;
+    max-width: 10em;
+    max-height: 10em;
+    margin: 0em 3em;
+}
+.image .banner{
+    margin-bottom: -8em;
+    min-height: 10em;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1.5fr));
+    grid-auto-rows: 0.5fr;
+    grid-gap: 2em;
+    margin: 2em;
+}
+.top {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.1em 1em;
+    border-radius: 1em;
+    max-width: 20em;
+}
+.top * {
+    background-color: transparent;
+}
+.right {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 0.1em 1em;
+    border-radius: 1em;
+}
+.right * {
+    background-color: transparent;
+}
+.bottom p {
+    margin: -0.2em 0em;
+}
