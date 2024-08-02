@@ -1,1 +1,3 @@
-# coopergte.github.io
+## passion project
+
+just learning web stuff 
