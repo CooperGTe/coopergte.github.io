@@ -7,7 +7,6 @@ let navstyle = document.createElement('link');
 navstyle.setAttribute('rel', 'stylesheet');
 navstyle.setAttribute('href', '../../../util/navigator.css');
 navdiv.appendChild(navstyle);
-
 // HTML ELEMENT
 let head = document.createElement('h1');
 let navHead = document.createElement('p');
@@ -32,15 +31,22 @@ navdiv.appendChild(bb);
 
 //Pages List
 function pageLists() {
-    return ['break','../page1', 'break', '../page2', '../page3'];
+    return ['../Main Page', 'break', '../Profile', '../FAQ', '../My Computer', 'break', ''];
+}
+function getPageTexts() {
+    return ['Main Page', 'Profile', 'FAQ', 'My Computer',]
 }
 function getBreakTexts() {
-    return ['text1', 'text2']
+    return ['About Me', 'Schizo Posting', 'About Him']
 }
 
 let directoryPaths = pageLists();
+
 let breakTexts = getBreakTexts();
-let breakIndex = 0
+let pageTexts = getPageTexts();
+
+let breakIndex = 0;
+let pageIndex = 0;
 
 directoryPaths.forEach(path => {
     if (path == 'break') {
@@ -54,8 +60,9 @@ directoryPaths.forEach(path => {
         let link = document.createElement('a');
         link.setAttribute('href', path);
         link.setAttribute('class', 'button');
-        link.textContent = `${path}`;
+        link.textContent = pageTexts[pageIndex] || '';
         navdiv.appendChild(link);
         navdiv.appendChild(document.createElement('br'));
+        pageIndex++;
     }
 });
