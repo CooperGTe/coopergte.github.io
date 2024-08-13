@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QnA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hidden {
+            display: none;
+        }
+        h3 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../../util/navigator.js"></script>
+    <div>
+        <h1>QnA</h1>
+        <h3 onclick="toggleParagraph('answer1')">Question 1</h3>
+        <p id="answer1" class="hidden">answer.</p>
+
+        <h3 onclick="toggleParagraph('answer2')">Question 2</h3>
+        <p id="answer2" class="hidden">answer.</p>
+
+        <h3 onclick="toggleParagraph('answer3')">Question 3</h3>
+        <p id="answer3" class="hidden">answer.</p>
+
+        <script>
+            function toggleParagraph(id) {
+                var paragraph = document.getElementById(id);
+                if (paragraph.style.display === "block") {
+                    paragraph.style.display = "none";
+                } else {
+                    paragraph.style.display = "block"
+                }
+            }
+        </script>
+
+    </div>
+</body>
+</html>

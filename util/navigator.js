@@ -31,10 +31,10 @@ navdiv.appendChild(bb);
 
 //Pages List
 function pageLists() {
-    return ['../Main Page', 'break', '../Profile', '../FAQ', '../My Computer', 'break', ''];
+    return ['../Main Page', 'break', '../Profile', '../QnA', '../My Computer', 'break', ''];
 }
 function getPageTexts() {
-    return ['Main Page', 'Profile', 'FAQ', 'My Computer',]
+    return ['Main Page', 'Profile', 'QnA', 'My Computer',]
 }
 function getBreakTexts() {
     return ['About Me', 'Schizo Posting', 'About Him']
