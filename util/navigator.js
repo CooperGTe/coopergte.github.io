@@ -54,7 +54,7 @@ directoryPaths.forEach(path => {
         if (path === currentPath) {
             link.setAttribute('class', 'loaded');
         } else {
-            link.setAttribute('class', 'button');
+            link.setAttribute('class', 'navbutton');
         }
         link.textContent = pageTexts[pageIndex] || '';
         navdiv.appendChild(link);
