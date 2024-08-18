@@ -1,12 +1,12 @@
 @import "../../util/button.css";
 
-* {
+.content * {
     background-color: #080812;
     color: white;
 }
 .image {
     background-color: #6fadb7;
-      padding: 2em 0em;
+    padding: 2em 0em;
 }
 .image img {
     border-radius: 20em;

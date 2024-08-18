@@ -4,8 +4,11 @@
 .content {
     padding: 20px;
     -mox-box-sizing: border-box;
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+    max-width: cover;
+    margin-left: auto;
+    margin-right: auto;
 }
 .content h1 {
     font-size: 2em;
@@ -27,7 +30,8 @@
     border-radius: 10px;
     padding: 1em;
     border: 1px solid grey;
-  backdrop-filter: blur(25px);
+    margin-bottom: 2em;
+    backdrop-filter: blur(25px);
 }
 .Page1 p {
     background-color: rgba(255,255,255,0.02);
@@ -51,13 +55,12 @@
     border-radius: 1em;
     padding: 1em;
     border: 1px solid grey;
-  backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
 }
 .Page3 {
     background-color: rgba(255,255,255,0.02);
     border-radius: 1em;
     padding: 1em;
     border: 1px solid grey;
-    margin-top: 2em;
-  backdrop-filter: blur(25px);
+    backdrop-filter: blur(25px);
 }
