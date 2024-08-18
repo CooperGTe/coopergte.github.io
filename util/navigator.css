@@ -61,6 +61,7 @@ body {
     order: 1;
     background-color: #0a0a17;
     box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    padding: 0.2em;
 }
 .headdiv button {
     min-width: 2em;
@@ -70,6 +71,12 @@ body {
     max-width: fit-content;
     margin-left: auto;
     margin-bottom: auto;
+    background-image: url('/images/menu.svg');
+    filter: invert(100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 0px solid;
+    background-color: transparent;
 }
 
 .navigator {
