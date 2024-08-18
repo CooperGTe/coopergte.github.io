@@ -1,6 +1,7 @@
 // NAVIGATION MENU DIV
 let navdiv = document.createElement('div');
 document.body.appendChild(navdiv);
+let headdiv = document.createElement('div')
 
 // CSS LOADER
 let navstyle = document.createElement('link');
@@ -11,14 +12,28 @@ navdiv.appendChild(navstyle);
 let head = document.createElement('h1');
 let navHead = document.createElement('p');
 
+headdiv.setAttribute('class', 'headdiv');
 navdiv.setAttribute('class', 'navigator');
-head.textContent = 'Header';
+navdiv.setAttribute('id', 'navigator');
+head.textContent = 'Navbar';
 navHead.textContent = 'Navigator';
 
+navdiv.appendChild(headdiv);
 navdiv.appendChild(head);
 navdiv.appendChild(navHead);
 navdiv.appendChild(document.createElement('br'));
 
+let navhide = document.createElement('button');
+navhide.setAttribute('onclick', 'toggleParagraph()');
+document.body.appendChild(headdiv);
+headdiv.appendChild(navhide);
+
+const width = window.innerWidth;
+if (width > 768) {
+    navdiv.style.display = "block"
+} else {
+    navdiv.style.display = "none"
+}
 
 //Pages List
 function pageLists() {
@@ -62,3 +77,12 @@ directoryPaths.forEach(path => {
         pageIndex++;
     }
 });
+function toggleParagraph() {
+    console.log("toggle");
+    if (navdiv.style.display === "none") {
+        navdiv.style.display = "block";
+    } 
+    else {
+        navdiv.style.display = "none"
+    }
+}

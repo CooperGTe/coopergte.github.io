@@ -6,16 +6,17 @@ body {
   background-size: cover;
   color: white;
 }
+
 .navigator {
   background-color: #0a0a17;
   color: white;
-  box-shadow: 0px 10px 10px black;
   -mox-box-sizing: border-box;
   -webkit-box-sizing: border-box; 
   box-sizing: border-box;
   padding:10px;
 }
-.navigator h1 {
+
+.navigator .headdiv {
   border-bottom: 1px solid grey;
 }
 .border-bottom {
@@ -54,15 +55,31 @@ body {
   border-left: 10px solid coral;
 }
 
+.headdiv {
+    display: flex;
+    flex-direction: row;
+    order: 1;
+    background-color: #0a0a17;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+}
+.headdiv button {
+    min-width: 2em;
+    max-width: 2em;
+    min-height: 2em;
+    max-height: fit-content;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-bottom: auto;
+}
 
 .navigator {
     width: 100%;
-    order: 1;
+    order: 2;
 }
 
 body .content {
     width: 100%;
-    order: 2;
+    order: 3;
 }
 
 /* Styles for desktop */
@@ -71,17 +88,21 @@ body .content {
         display: flex;
         flex-direction: row;
     }
-
+    .headdiv {
+        order: 2;
+        margin-right: 10px;
+        min-height: 100vh;
+        box-shadow: 10px 0px 10px rgba(0,0,0,0.5);
+        margin-right: 2em;
+    }
     .navigator {
         width: 27%;
         order: 1;
         max-width: 230px;
         min-height: 100vh;
-        margin-right: 10px;
     }
-
     body .content {
         width: 73%;
-        order: 2;
+        order: 3;
     }
 }
