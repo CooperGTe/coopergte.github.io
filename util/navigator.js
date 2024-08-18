@@ -24,7 +24,7 @@ navdiv.appendChild(navHead);
 navdiv.appendChild(document.createElement('br'));
 
 let navhide = document.createElement('button');
-navhide.setAttribute('onclick', 'toggleParagraph()');
+navhide.setAttribute('onclick', 'toggleNavbar()');
 document.body.appendChild(headdiv);
 headdiv.appendChild(navhide);
 
@@ -77,7 +77,7 @@ directoryPaths.forEach(path => {
         pageIndex++;
     }
 });
-function toggleParagraph() {
+function toggleNavbar() {
     console.log("toggle");
     if (navdiv.style.display === "none") {
         navdiv.style.display = "block";

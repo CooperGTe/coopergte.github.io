@@ -16,7 +16,7 @@ body {
   padding:10px;
 }
 
-.navigator .headdiv {
+.navigator h1 {
   border-bottom: 1px solid grey;
 }
 .border-bottom {
