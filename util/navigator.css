@@ -76,10 +76,19 @@ body {
     background-color: transparent;
 }
 
+
+
+body .content {
+    width: 100%;
+    order: 3;
+}
+
+@media(max-width: 768px) {
 #navigator {
     width: 100%;
     order: 2;
     transition-timing-function: ease-out;
+    transition: margin 0.5s;
     margin-top: 0px;
     overflow: hidden;
 }
@@ -88,13 +97,7 @@ body {
     transition-timing-function: ease-in;
     margin-top:-300px;
 }
-
-
-body .content {
-    width: 100%;
-    order: 3;
 }
-
 /* Styles for desktop */
 @media(min-width: 768px) {
     body {
