@@ -13,7 +13,6 @@ let head = document.createElement('h1');
 let navHead = document.createElement('p');
 
 headdiv.setAttribute('class', 'headdiv');
-navdiv.setAttribute('class', 'navigator');
 navdiv.setAttribute('id', 'navigator');
 head.textContent = 'Navbar';
 navHead.textContent = 'Navigator';
@@ -33,6 +32,7 @@ if (width > 768) {
     navdiv.style.display = "block"
 } else {
     navdiv.style.display = "none"
+    navdiv.classList.add("hidden")
 }
 
 //Pages List
@@ -43,7 +43,7 @@ function getPageTexts() {
     return ['Main Page', 'Profile', 'QnA', 'My Computer',]
 }
 function getBreakTexts() {
-    return ['About Me', 'Schizo Posting', 'About Him']
+    return ['About Me', 'Doc.DB', 'About Him']
 }
 
 let directoryPaths = pageLists();
@@ -81,8 +81,14 @@ function toggleNavbar() {
     console.log("toggle");
     if (navdiv.style.display === "none") {
         navdiv.style.display = "block";
+        setTimeout(() => {
+            navdiv.classList.remove("hidden");
+        }, 10);
     } 
     else {
-        navdiv.style.display = "none"
+        navdiv.classList.add("hidden")
+        setTimeout(() => {
+            navdiv.style.display = "none"
+        }, 500);
     }
 }
