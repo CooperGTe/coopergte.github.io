@@ -12,7 +12,7 @@ navdiv.appendChild(navstyle);
 let head = document.createElement('h1');
 let navHead = document.createElement('p');
 
-headdiv.setAttribute('class', 'headdiv');
+headdiv.setAttribute('id', 'headdiv');
 navdiv.setAttribute('id', 'navigator');
 head.textContent = 'Navbar';
 navHead.textContent = 'Navigator';
@@ -37,10 +37,10 @@ if (width > 768) {
 
 //Pages List
 function pageLists() {
-    return ['/', 'break', '/katsuro/Profile/', '/katsuro/QnA/', '/katsuro/My%20Computer/', 'break', ''];
+    return ['/', 'break', '/katsuro/Profile/', '/katsuro/FAQ/', '/katsuro/My%20Computer/', 'break', '/doc_db/Archlinux/', '/doc_db/schoolhtmltest/','/doc_db/schoolhtmltest2/'];
 }
 function getPageTexts() {
-    return ['Main Page', 'Profile', 'QnA', 'My Computer',]
+    return ['Main Page', 'Profile', 'FAQ', 'My Computer','Arch Linux','tugas1', 'pertemuan2']
 }
 function getBreakTexts() {
     return ['About Me', 'Doc.DB', 'About Him']
