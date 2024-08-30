@@ -1,0 +1,9 @@
+.hazardtape  {
+    background-image: repeating-linear-gradient(
+        -55deg,
+        #ffffff,
+        #ffffff 15px,
+        coral 10px,
+        coral 30px
+    );
+}

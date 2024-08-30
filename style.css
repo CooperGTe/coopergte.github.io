@@ -1,5 +1,4 @@
-@import "./util/button.css";
-
+@import '/util/profilecard.css';
 
 .content {
     padding: 20px;
@@ -10,33 +9,38 @@
     margin-left: auto;
     margin-right: auto;
 }
-.content h1 {
+
+#title {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
+}
+#title h1 {
     font-size: 2em;
-    /*text-align: center;*/
-    border-radius: 0em 0.5em 0.5em 0em;
+    border-bottom: 4px solid coral;
 }
-.grid {
+
+
+#main-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22em, 1.5fr));
-    grid-auto-rows: 0.5fr;
+    grid-template-columns: 1fr 300px;
+    grid-auto-rows: 730px;
     grid-gap: 2em;
-    justify-content: center;
+    justify-content: start;
+    display: flex;
 }
-.Page1 {
-    background-color: #080817 !important;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
-    padding: 1em;
-    margin-bottom: -200px;
-    min-height: 300px;
+#pfcard {
+    max-width: 375px;
+    background: linear-gradient(315deg, transparent 10px, rgba(0,0,0,0.05) 0);
+    margin-bottom: 10px;
 }
-.Page1 p {
-    border-radius: 0px 10px 10px 0px;
+#pfcard p {
     padding: 1em;
-    border-left: 3px solid grey;
+    border-left: 20px solid coral;
 
 }
-.Page1 h3 {
+#pfcard h3 {
     font-size: 20px;
     padding: 0px 0px 10px 10px;
     border-bottom: 1px solid grey;
@@ -46,22 +50,50 @@
     border-radius: 10px;
     padding: 1em;
 }
-.Page2 {
+
+#member {
     background-color: rgba(255,255,255,0.02);
-    border-radius: 1em;
     padding: 1em;
-    max-width: 250px;
-    border: 1px solid grey;
-    backdrop-filter: blur(25px);
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
 }
+#katsuro { grid-area: katsuro; }
+#atherionfi { grid-area: atherionfi; }
+#rlakhdan { grid-area: rlakhdan; }
+#peco { grid-area: peco; }
+#rlabdi { grid-area: rlabdi; }
+#emptypf { grid-area: emptypf; }
+.profilecard {
+    width: 350px;
+    height: 150px;
+    margin-bottom: 30px;
+}
+#member-list img {
+    margin-left: 20px;
+    border-left: 4px solid brown;
+    width: 100px;
+    height: 100px;
+}
+
+
+
 .Page3 {
-    background-color: #080817;
     border-radius: 1em;
     padding: 1em;
-    box-shadow: 0px 0px 10px rgba(0,0,0,0.6); 
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+    margin-top: 30px;
+}
+.hazardtape {
+    width: 50px;
+    height: 80px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 @media(min-width: 768px) {
-  .Page3 {
-    margin: 0em 5em;
-  }
+    .hazardtape {
+        height: 25px;
+        width: 110px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
 }
+

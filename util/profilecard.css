@@ -1,0 +1,31 @@
+.profilecard {
+    background: linear-gradient(315deg, transparent 25px, rgba(0,0,0,0.05) 0);
+    --accent: brown;
+}
+#name {
+    justify-content: end;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
+    box-shadow: inset 0 0.8em 0 var(--accent);
+}
+#name h4 {
+    margin: 0px; 
+    background-color: var(--accent);
+    color: white;
+    padding: 5px;
+    min-width: 200px;
+}
+#name #boxslice {
+    width: 20px;
+    background: var(--accent);
+    -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
+    clip-path: polygon(100% 100%, 0 0, 100% 0);
+}  
+#name #iboxslice {
+    width: 20px;
+    background: var(--accent);
+    -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+

@@ -14,8 +14,8 @@ let navHead = document.createElement('p');
 
 headdiv.setAttribute('id', 'headdiv');
 navdiv.setAttribute('id', 'navigator');
-head.textContent = 'Navbar';
-navHead.textContent = 'Navigator';
+head.textContent = 'GT:ZE CS-G11';
+navHead.textContent = 'Pages Navigator';
 
 navdiv.appendChild(headdiv);
 navdiv.appendChild(head);
