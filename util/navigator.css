@@ -75,7 +75,7 @@ body {
 
 
 
-body .content {
+body #content {
     width: 100%;
     order: 3;
 }
@@ -123,8 +123,8 @@ body .content {
         margin-left:-230px;
     }
 
-    body .content {
-        width: 73%;
+    body #content {
+        width: 64%;
         order: 3;
     }
 }

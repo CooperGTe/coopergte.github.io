@@ -1,6 +1,6 @@
 @import '/util/profilecard.css';
 
-.content {
+#content {
     padding: 20px;
     -mox-box-sizing: border-box;
     -webkit-box-sizing: border-box; 
@@ -24,11 +24,9 @@
 
 #main-content {
     display: grid;
-    grid-template-columns: 1fr 300px;
-    grid-auto-rows: 730px;
+    grid-template-columns: auto;
     grid-gap: 2em;
     justify-content: start;
-    display: flex;
 }
 #pfcard {
     max-width: 375px;
@@ -51,11 +49,32 @@
     padding: 1em;
 }
 
+
+/* MEMBER STYLING */
+
 #member {
     background-color: rgba(255,255,255,0.02);
     padding: 1em;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
 }
+#member .title {
+    display: flex;
+    flex-direction: row;
+}
+#member .title .hazardtape-yellow {
+    width: 90px;
+    height: 25px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#member .title h3 {
+    background: brown;
+    color: white;
+    padding: 0 10px 0 10px;
+    margin-left: -13px
+}
+
+
 #katsuro { grid-area: katsuro; }
 #atherionfi { grid-area: atherionfi; }
 #rlakhdan { grid-area: rlakhdan; }
@@ -64,7 +83,6 @@
 #emptypf { grid-area: emptypf; }
 .profilecard {
     width: 350px;
-    height: 150px;
     margin-bottom: 30px;
 }
 #member-list img {
@@ -73,14 +91,21 @@
     width: 100px;
     height: 100px;
 }
+#member-list .info {
+    font-size: 0.8em;
+    color: rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+/* MEMBER DESCRIPTION */
 
 
 
 .Page3 {
-    border-radius: 1em;
     padding: 1em;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-    margin-top: 30px;
+    margin-top: 20px;
+    min-width: auto;
 }
 .hazardtape {
     width: 50px;
@@ -89,6 +114,9 @@
     margin-bottom: auto;
 }
 @media(min-width: 768px) {
+    #main-content {
+        grid-template-columns: auto 1fr;
+    }
     .hazardtape {
         height: 25px;
         width: 110px;

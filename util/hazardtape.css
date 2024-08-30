@@ -7,3 +7,12 @@
         coral 30px
     );
 }
+.hazardtape-yellow  {
+    background-image: repeating-linear-gradient(
+        -55deg,
+        #ffffff,
+        #ffffff 10px,
+        brown 0px,
+        brown 26px
+    );
+}
