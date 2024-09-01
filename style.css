@@ -71,12 +71,6 @@
 }
 
 
-#katsuro { grid-area: katsuro; }
-#atherionfi { grid-area: atherionfi; }
-#rlakhdan { grid-area: rlakhdan; }
-#peco { grid-area: peco; }
-#rlabdi { grid-area: rlabdi; }
-#emptypf { grid-area: emptypf; }
 .profilecard {
     width: 350px;
     margin-bottom: 30px;
@@ -93,16 +87,28 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-/* MEMBER DESCRIPTION */
 
 
+/* FILLER CONTENT */
+#description { grid-area: description; }
+#content-table { grid-area: content-table; }
+#todo { grid-area: todo; }
 
-.Page3 {
+#sec-content {
     padding: 1em;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
     margin-top: 20px;
     min-width: auto;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
+    display: grid;
+    grid-template:
+        'description description'
+        'content-table todo';
 }
+#sec-content #description {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
+}
+
+
 
 .hazardtape {
     height: 25px;
@@ -110,7 +116,7 @@
     margin-top: auto;
     margin-bottom: auto;
 }
-
+/* MOBILE UI PATCHES */
 @media(max-width: 768px) {
     #main-content {
         grid-template-columns: auto;

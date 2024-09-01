@@ -33,6 +33,11 @@
     color: white;
     padding: 5px;
     min-width: 200px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 #name #boxslice {
     width: 20px;
