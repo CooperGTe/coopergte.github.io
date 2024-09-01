@@ -99,10 +99,6 @@
     margin-top: 20px;
     min-width: auto;
     box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
-    display: grid;
-    grid-template:
-        'description description'
-        'content-table todo';
 }
 #sec-content #description {
     box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
