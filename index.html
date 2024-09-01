@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Main Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0.9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8"> 
 </head>
 <body>
@@ -32,9 +32,9 @@
                         <div id="katsuro" class='profilecard'>
                             <div id="name" onclick="toggleParagraph('katsurodesc')">
                                 <div id="boxslice"></div>
-                                <h4>Katsuro Miyazaki</h4> 
+                                <h4>Katsuro Miyazaki | 活朗宮咲</h4> 
                             </div>
-                            <div id=katsurodesc class="content" style='display:none;'>
+                            <div id=katsurodesc class="content collapsed">
                                 <img src="/images/katsuro-pfp.png" alt="katsuro">
                                 <p class="desc"><b>Type &nbsp;: Human<br>Class : Angel</b><br>An Internet personality based on KLmodel-AGI </p>
                             </div>
@@ -46,11 +46,12 @@
                                 <div id="boxslice"></div>
                                 <h4>AtherionFi</h4> 
                             </div>
-                            <div id=atherionfidesc class="content"style="display:none;">
+                            <div id=atherionfidesc class="content collapsed">
                                 <img src="/images/atherionfi-pfp.png" alt="atherionfi">
                                 <p class="desc">An avid Visual Novel Enjoyer<br>Mindustry Addict</p>
                             </div>
                             <div id=footer>
+                                <a href="https://atherionfi.github.io/">Atherion's Sites</a>
                             </div>
                         </div>
                         <div id="rlakhdan" class='profilecard'>
@@ -58,9 +59,9 @@
                                 <div id="boxslice"></div>
                                 <h4>Akhdan Ghifari</h4> 
                             </div>
-                            <div id=akhdandesc class="content"  style='display:none;'>
+                            <div id=akhdandesc class="content collapsed">
                                 <img src="/images/akhdan-pfp.jpg" alt="akhdan">
-                                <p class="desc">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur.</p>
+                                <p class="desc">Multifandom (not every fandom), roleplayer, private author. <br> Lazy yet capable</p>
                             </div>
                             <div id=footer>
                             </div>
@@ -70,49 +71,60 @@
                                 <div id="boxslice"></div>
                                 <h4>Peco</h4> 
                             </div>
-                            <div id=pecodesc class="content" style='display:none;'>
+                            <div id=pecodesc class="content collapsed">
                                 <img src="/images/peco-pfp.jpg" alt="peco">
-                                <p class="desc">A goofy goober<br>Species:Scub Coral</p>
+                                <p class="desc"><b>Species: Scub Coral /s</b><br><i>A goofy goober</i><br>I enjoy TV shows, movies, manga, and retro games.</p>
                             </div>
                             <div id=footer>
+                                <a href="https://raymond145.github.io/">Peco's Sites</a>
                             </div>
                         </div>
                         <div id="rlabdi" class='profilecard'>
                             <div id="name" onclick="toggleParagraph('abdidesc')">
                                 <div id="boxslice"></div>
-                                <h4>Abdi Mawlana</h4> 
+                                <h4>Yadsa</h4> 
                             </div>
-                            <div id="abdidesc" class="content" style='display:none;'>
+                            <div id="abdidesc" class="content collapsed">
+                                <img src="/images/abdi-pfp.png" alt="abdi">
                                 <p class="desc">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur.</p>
                             </div>
                             <div id=footer>
+                                <a href="https://yadsa111.github.io/">Abdi's Sites</a>
                             </div>
                         </div>
                         <script>
                             function toggleParagraph(id) {
-                            var paragraph = document.getElementById(id);
-                                if (paragraph.style.display === "flex") {
-                                    paragraph.style.display = "none";
-                                } else {
-                                    paragraph.style.display = "flex"
-                                }
+                                var paragraph = document.getElementById(id);
+                                paragraph.classList.toggle('collapsed');
                             }
                         </script>
                     </div>
-                    <a href="https://raymond145.github.io/" class="button">Peco's Sites</a>
-                    <br>
-                    <a href="https://atherionfi.github.io/" class="button">Atherion's Sites</a>
-                    <br>
-                    <a href="https://yadsa111.github.io/" class="button">Abdi's Sites</a>
                 </div>
             </div>
-            <div class=Page3>
-                <p>Site ToDo List</p>
-                <ul>
-                    <li>Fix Profile Page</li>
-                    <li>(done kinda)Animation~</li>
-                    <li>More Styling</li>
-                </ul>            
+            <div id=sec-content>
+                <div id=description>
+                    <div>
+                        <h3>Content</h3>
+                        <div class="blockslice"></div>
+                    </div>
+                    <p>GT Zeta Eplison is Computer Science institute under GT Intergalactical Federation Focusing on ASI (Artificial Super Intellegence) Development and MetaPhysics High-Performance Super Computer</p>
+                </div>
+                <div id=content-table>
+                    <p>Table of Content</p>
+                    <ul>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                    </ul>
+                </div>
+                <div id=todo>    
+                    <p>Site ToDo List</p>
+                    <ul>  
+                        <li>Fix Profile Page</li>
+                        <li>(done kinda)Animation~</li>
+                        <li>More Styling</li>
+                    </ul>            
+                </div>
             </div>
         </div>
     </div>

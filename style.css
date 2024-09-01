@@ -1,5 +1,6 @@
 @import '/util/profilecard.css';
 
+
 #content {
     padding: 20px;
     -mox-box-sizing: border-box;
@@ -9,6 +10,7 @@
     margin-left: auto;
     margin-right: auto;
 }
+
 
 #title {
     display: flex;
@@ -20,14 +22,13 @@
     font-size: 2em;
     border-bottom: 4px solid coral;
 }
-
-
 #main-content {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto 1fr;
     grid-gap: 2em;
     justify-content: start;
 }
+
 #pfcard {
     max-width: 375px;
     background: linear-gradient(315deg, transparent 10px, rgba(0,0,0,0.05) 0);
@@ -42,11 +43,6 @@
     font-size: 20px;
     padding: 0px 0px 10px 10px;
     border-bottom: 1px solid grey;
-}
-.mypage {
-    background-color: rgba(255,255,255,0.02);
-    border-radius: 10px;
-    padding: 1em;
 }
 
 
@@ -75,12 +71,6 @@
 }
 
 
-#katsuro { grid-area: katsuro; }
-#atherionfi { grid-area: atherionfi; }
-#rlakhdan { grid-area: rlakhdan; }
-#peco { grid-area: peco; }
-#rlabdi { grid-area: rlabdi; }
-#emptypf { grid-area: emptypf; }
 .profilecard {
     width: 350px;
     margin-bottom: 30px;
@@ -97,31 +87,51 @@
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-/* MEMBER DESCRIPTION */
 
 
+/* FILLER CONTENT */
+#description { grid-area: description; }
+#content-table { grid-area: content-table; }
+#todo { grid-area: todo; }
 
-.Page3 {
+#sec-content {
     padding: 1em;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
     margin-top: 20px;
     min-width: auto;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
 }
+#sec-content #description {
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
+}
+
+
+
 .hazardtape {
-    width: 50px;
-    height: 80px;
+    height: 25px;
+    width: 110px;
     margin-top: auto;
     margin-bottom: auto;
 }
-@media(min-width: 768px) {
+/* MOBILE UI PATCHES */
+@media(max-width: 768px) {
     #main-content {
-        grid-template-columns: auto 1fr;
+        grid-template-columns: auto;
     }
     .hazardtape {
-        height: 25px;
-        width: 110px;
+        width: 50px;
+        height: 80px;
         margin-top: auto;
         margin-bottom: auto;
+    }
+    .profilecard {
+        width: 300px;
+        margin-bottom: 30px;
+    }
+    #member-list img {
+        margin: 20px 0px 0px 20px;
+        border-left: 4px solid brown;
+        width: 80px;
+        height: 80px;
     }
 }
 

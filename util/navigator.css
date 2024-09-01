@@ -3,16 +3,14 @@ body {
 }
 
 #navigator {
-  background-color: #0a0a17;
-  color: white;
-  -mox-box-sizing: border-box;
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
-  }
-
-
-#navigator h1 {
-  border-bottom: 1px solid grey;
+    background-color: #0f0f21;
+    color: white;
+    -mox-box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
+}
+#navigator p {
+    text-decoration: bold;
 }
 .border-bottom {
   border-bottom: 1px solid grey;
@@ -57,6 +55,8 @@ body {
     background-color: #0a0a17;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
     padding: 0.2em;
+    z-index: 1001;
+    position: fixed;
 }
 #headdiv button {
     min-width: 2em;
@@ -64,7 +64,8 @@ body {
     min-height: 2em;
     max-height: fit-content;
     max-width: fit-content;
-    margin-left: auto;
+    margin-right: 30px;
+    margin-left: 5px;
     margin-bottom: auto;
     background-image: url('/images/menu.svg');
     background-repeat: no-repeat;
@@ -72,41 +73,101 @@ body {
     border: 0px solid;
     background-color: transparent;
 }
-
+#headdiv a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0px 10px;
+}
+#headdiv #home-button {
+    margin-right: auto;
+}
 
 
 body #content {
     width: 100%;
     order: 3;
 }
-
+/* Styles for mobile */
 @media(max-width: 768px) {
-#navigator {
-    width: 100%;
-    order: 2;
-    transition-timing-function: ease-out;
-    transition: margin 0.5s;
-    margin-top: 0px;
-    overflow: hidden;
+    body #content{
+        padding-top: 60px;
+    }
+    #headdiv {
+        width: 100vw;
+    }
+    #navigator {
+        width: 100%;
+        order: 2;
+        transition-timing-function: ease-out;
+        transition: margin 0.5s;
+        margin-top: 0px;
+        overflow: hidden;
+        z-index: 1000;
+        position: fixed;
+        margin-top: 40px;
+        max-width: 230px;
+        border-radius: 0px 10px 10px 0px;
+    }
+    #navigator.hidden {
+        transition: margin 0.5s;
+        transition-timing-function: ease-in;
+        margin-left:-230px;
+    }
+    #headdiv button {
+        min-width: 2.5em;
+        min-height: 2.5em;
+    }
+    #headdiv a {
+        display: none;
+    }
+    #headdiv #home-button{
+        display: block;
+        margin:auto 0px;
+    }
 }
-#navigator.hidden {
-    transition: margin 0.5s;
-    transition-timing-function: ease-in;
-    margin-top:-400px;
-}
+/* Styles fot tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #headdiv {
+        margin-right: 10px;
+        min-width: 100vw;
+        box-shadow: 5px 0px 5px rgba(0,0,0,0.2);
+        z-index: 1001;
+        position: fixed;
+    }
+    #navigator {
+        width: 27%;
+        max-width: 230px;
+        min-height: 100vh;
+        transition: margin 0.5s;
+        transition-timing-function: ease-out;
+        margin-left: 0px;
+        overflow: hidden;
+        position: fixed;
+        z-index: 1000;
+        margin-top: 30px;
+    }
+    #navigator.hidden {
+        transition-timing-function: ease-in;
+        margin-left:-230px;
+    }
+
+    body #content {
+        padding-top: 50px;
+    }
 }
 /* Styles for desktop */
-@media(min-width: 768px) {
+@media(min-width: 1025px) {
     body {
         display: flex;
         flex-direction: row;
     }
     #headdiv {
-        order: 2;
         margin-right: 10px;
-        min-height: 100vh;
+        min-width: 100vw;
         box-shadow: 5px 0px 5px rgba(0,0,0,0.2);
-        margin-right: 2em;
+        z-index: 1000;
+        position: fixed;
     }
     #navigator {
         width: 27%;
@@ -117,6 +178,8 @@ body #content {
         transition-timing-function: ease-out;
         margin-left: 0px;
         overflow: hidden;
+        position: relative;
+        margin-top: 30px;
     }
     #navigator.hidden {
         transition-timing-function: ease-in;
@@ -124,7 +187,8 @@ body #content {
     }
 
     body #content {
-        width: 64%;
-        order: 3;
+        width: 70vw;
+        order: 2;
+        margin-top: 30px;
     }
 }
