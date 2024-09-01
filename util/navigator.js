@@ -48,7 +48,7 @@ document.body.appendChild(headdiv);
 
 
 const width = window.innerWidth;
-if (width > 768) {
+if (width > 1024) {
     navdiv.style.display = "block"
 } else {
     navdiv.style.display = "none"

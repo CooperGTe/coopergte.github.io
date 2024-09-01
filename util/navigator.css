@@ -3,11 +3,11 @@ body {
 }
 
 #navigator {
-  background-color: #0f0f21;
-  color: white;
-  -mox-box-sizing: border-box;
-  -webkit-box-sizing: border-box; 
-  box-sizing: border-box;
+    background-color: #0f0f21;
+    color: white;
+    -mox-box-sizing: border-box;
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box;
 }
 #navigator p {
     text-decoration: bold;
@@ -88,8 +88,11 @@ body #content {
     width: 100%;
     order: 3;
 }
-/* Styles for mobile*/
+/* Styles for mobile */
 @media(max-width: 768px) {
+    body #content{
+        padding-top: 60px;
+    }
     #headdiv {
         width: 100vw;
     }
@@ -123,8 +126,38 @@ body #content {
         margin:auto 0px;
     }
 }
+/* Styles fot tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #headdiv {
+        margin-right: 10px;
+        min-width: 100vw;
+        box-shadow: 5px 0px 5px rgba(0,0,0,0.2);
+        z-index: 1001;
+        position: fixed;
+    }
+    #navigator {
+        width: 27%;
+        max-width: 230px;
+        min-height: 100vh;
+        transition: margin 0.5s;
+        transition-timing-function: ease-out;
+        margin-left: 0px;
+        overflow: hidden;
+        position: fixed;
+        z-index: 1000;
+        margin-top: 30px;
+    }
+    #navigator.hidden {
+        transition-timing-function: ease-in;
+        margin-left:-230px;
+    }
+
+    body #content {
+        padding-top: 50px;
+    }
+}
 /* Styles for desktop */
-@media(min-width: 768px) {
+@media(min-width: 1025px) {
     body {
         display: flex;
         flex-direction: row;
@@ -154,7 +187,7 @@ body #content {
     }
 
     body #content {
-        width: 64%;
+        width: 70vw;
         order: 2;
         margin-top: 30px;
     }
