@@ -57,10 +57,10 @@ if (width > 1024) {
 
 //Pages List
 function pageLists() {
-    return ['/', 'break', '/katsuro/Profile/', '/katsuro/FAQ/', '/katsuro/My%20Computer/', 'break', '/doc_db/Archlinux/', '/doc_db/schoolhtmltest/','/doc_db/schoolhtmltest2/'];
+    return ['/', 'break', '/katsuro/Profile/', '/katsuro/FAQ/', '/katsuro/My%20Computer/', 'break', '/doc_db/Archlinux/', '/doc_db/schoolhtmltest/','/doc_db/schoolhtmltest1/','/doc_db/schoolhtmltest2/'];
 }
 function getPageTexts() {
-    return ['Main Page', 'Profile', 'FAQ', 'My Computer','Arch Linux','tugas1', 'pertemuan2']
+    return ['Main Page', 'Profile', 'FAQ', 'My Computer','Arch Linux','pertemuan 1', 'pertemuan 2', 'pertemuan 3']
 }
 function getBreakTexts() {
     return ['About Me', 'Doc.DB', 'About Him']

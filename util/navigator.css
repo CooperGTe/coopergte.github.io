@@ -87,11 +87,13 @@ body {
 body #content {
     width: 100%;
     order: 3;
+    margin-right: auto;
+    margin-left: auto;
 }
 /* Styles for mobile */
 @media(max-width: 768px) {
     body #content{
-        padding-top: 60px;
+        padding-top: 40px;
     }
     #headdiv {
         width: 100vw;
@@ -153,7 +155,7 @@ body #content {
     }
 
     body #content {
-        padding-top: 50px;
+        padding-top: 33px;
     }
 }
 /* Styles for desktop */
