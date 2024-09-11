@@ -1,11 +1,180 @@
 <html>
-  <head>
-    <title>Arch Linux System</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="UTF-8">
-  </head>
-  <body>
-    <script src="/util/navigator.js"></script>
-    <div id="content"></div>
-  </body>
+    <head>
+        <title>Arch Linux System</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <script src="/util/navigator.js"></script>
+        <div id="content">
+            <link rel="stylesheet" href="style.css">
+            <h1>Arch Install Manual</h1>
+            <p>this guide is for me and the one who already boot to arch live os</p>
+            <h3>Table Of Content</h3>
+            <ul>
+                <li>Network Configuration</li>
+                <li>Partitioning</li>
+                <li>Formatting</li>
+                <li>Mounting</li>
+                <li>Mirrorlist(rankmirror)</li>
+                <li>Mirrorlist(reflector)</li>
+                <li>Installing The Kernel</li>
+                <li>Installing The Kernel(Offline Way)</li>
+                <li>Generate Fstab</li>
+                <li>Enter The Installed Arch</li>
+                <li>Timezone Setup</li>
+                <li>Locale Setup</li>
+                <li>Host Name</li>
+                <li>Root Password</li>
+                <li>Adding User</li>
+                <li>Add Group To the User</li>
+                <li>Enable Core Service</li>
+                <li>Bootloader Installation</li>
+                <li>Finish up</li>
+            </ul>
+            <div id=step>
+                <h3>Connecting To Network</h3>
+                <h5>(for device with wifi card and not ethernet)</h5>
+                <p id=command>
+                    # iwtcl <br> 
+                    # device list <br>
+                    # station [device] scan <br>
+                    # station [device] get-networks <br>
+                    # station [device] connect [ssid] <br>
+                </p>
+            </div>
+            <div id=step>
+                <h3>Partitioning</h3>
+                <h5>(the easy way)</h5>
+                <p id=command>
+                    # cfdisk
+                </p>
+                <h5>Note: you can check your partition and what u mounting using</h5>
+                <p id=command>
+                    # lsblk
+                </p>
+            </div>
+            <div id=step>
+                <h3>Formatting</h3> 
+                <p id=command>
+                    # mkfs.ext4 [partitition location] <br>
+                    # mkfs.fat -F 32 [boot partition] <br>
+                    # mkswap [swap partition]
+                </p>
+            </div>
+            <div id=step>
+                <h3>Mounting</h3>
+                <p id=command>
+                    # mount [partition location] /mnt <br>
+                    # mkdir -p /mnt/boot/efi <br>
+                    # mount [boot partition]  /mnt/boot/efi <br>
+                    # swapon [swap partition]
+                </p>
+            </div>
+            <div id=step>
+                <h3>Mirrorlist(rankmirror)</h3>
+                <p id=command>
+                    # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup <br>
+                    # sudo pacman -Sy pacman-contrib <br>
+                    # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+                </p>
+            </div>
+            <div id=step>
+                <h3>Mirrorlist(reflector)</h3>
+                <p id=command>
+                    # sudo reflector --country 'indonesia,singapure,' --verbose --protocol https -f 10 --score 20 --save /etc/pacman.d/mirrorlist
+                </p>
+            </div>
+            <div id=step>
+                <h3>Installing The Kernel</h3>
+                <p id=command>
+                    # pacstrap /mnt base linux linux-firmware base-devel grub efibootmgr neovim networkmanager 
+                </p>
+            </div>
+            <div id=step>
+                <h3>Installing The Kernel(Offline Way)</h3>
+                <p id=command>
+                                    
+                </p>
+            </div>
+            <div id=step>
+                <h3>Generate Fstab</h3>
+                <p id=command>
+                    # genfstab /mnt <br>
+                    # genfstab /mnt > /mnt/etc/fstab <br>
+                    # cat /mnt/etc/fstab 
+                </p>
+            </div>
+            <div id=step>
+                <h3>Enter The Installed Arch</h3>
+                <p id=command>
+                    # arch-chroot /mnt
+                </p>
+            </div>
+            <div id=step>
+                <h3>Timezone Setup</h3>
+                <p id=command>
+                    # ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime <br>
+                    # hwclock --systohc
+                </p>
+            </div>
+            <div id=step>
+                <h3>Locale Setup</h3>
+                <p id=command>
+                    # nvim /etc/locale.gen <br> 
+                    # en_US.UTF-8 UTF-8 <br>
+                    # locale-gen <br>
+                    # nvim /etc/locale.conf <br>
+                    # LANG=en_US.UTF-8
+                </p>
+            </div>
+            <div id=step>
+                <h3>Host name</h3>
+                <p id=command>
+                    # nvim /etc/hostname
+                </p>
+            </div>
+            <div id=step>
+                <h3>Root Password</h3>
+                <p id=command>
+                    # passwd 
+                </p>
+            </div>
+            <div id=step>
+                <h3>Adding User</h3>
+                <p id=command>
+                    # useradd -m -G wheel -s /bin/bash [name] <br>
+                    # passwd [name]
+                </p>
+            </div>
+            <div id=step>
+                <h3>Add Group To the User</h3>
+                <p id=command>
+                    # EDITOR=nvim visudo <br>
+                    # %wheel ALL=(ALL.ALL) ALL
+                </p>
+            </div>
+            <div id=step>
+                <h3>Enable Core Service</h3>
+                <p id=command>
+                    # systemctl enable NetworkManager
+                </p>
+            </div>
+            <div id=step>
+                <h3>Bootloader Installation</h3>
+                <p id=command>
+                    # grub-install /dev/sda <br>
+                    # grub-mkconfig -o /boot/grub/grub.cfg
+                </p>
+            </div>
+            <div id=step>
+                <h3>Finish Up</h3>
+                <p id=command>
+                    # exit <br>
+                    # umount -a <br>
+                    # reboot
+                </p>
+            </div>
+        </div>
+    </body>
 </html>

@@ -21,6 +21,9 @@ navdiv.appendChild(document.createElement('br'));
 
 
 // TOP BAR
+let navhidediv = document.createElement('div');
+navhidediv.setAttribute('class', 'navhide');
+
 let navhide = document.createElement('button');
 navhide.setAttribute('onclick', 'toggleNavbar()');
 
@@ -38,7 +41,8 @@ peco.setAttribute('href', 'https://raymond145.github.io')
 peco.textContent = '| Peco Sites'
 
 
-headdiv.appendChild(navhide);
+navhidediv.appendChild(navhide);
+headdiv.appendChild(navhidediv);
 headdiv.appendChild(home);
 headdiv.appendChild(atherionfi);
 headdiv.appendChild(peco);
@@ -48,6 +52,13 @@ document.body.appendChild(headdiv);
 
 
 const width = window.innerWidth;
+
+if (width > 1024) {
+    console.log('width bigger than your mom')
+}
+if (width < 1024) {
+    console.log('width smaller than your mom')
+}
 if (width > 1024) {
     navdiv.style.display = "block"
 } else {
@@ -112,3 +123,20 @@ function toggleNavbar() {
         }, 500);
     }
 }
+function handleScroll() {
+    const scrollTop = window.scrollY;
+
+    if (scrollTop < 500 && navdiv.style.display === "none" && width > 1024) {
+        navdiv.style.display = "block";
+        setTimeout(() => {
+            navdiv.classList.remove("hidden");
+        }, 10);
+    } 
+    else if (scrollTop > 500 && navdiv.style.display === "block" && width > 1024) {
+        navdiv.classList.add("hidden")
+        setTimeout(() => {
+            navdiv.style.display = "none"
+        }, 500);
+    }
+}
+window.addEventListener('scroll', handleScroll);
