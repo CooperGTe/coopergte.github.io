@@ -9,7 +9,7 @@ body {
 #banner {
     order: 1;
     width: 280px;
-    height: 100vh;
+    height: 96vh;
     background: rgba(250,50,25,0.5);
     display: flex;
     flex-direction: column;
@@ -29,20 +29,32 @@ body {
     color: white;
 }
 #banner h5 {
-    margin: 10px auto 0px 40px;
-    background: #8e342d;
-    border-radius: 10px;
-    padding: 2px 20px;
+    margin: 0px;
     color: white;
+}
+#kanji-name {
+    display: flex;
+    background: #aaaacc;
+    box-shadow: 0px 0px 10px -3px black;
+    border-radius: 10px;
+    color: white;
+    padding: 2px 20px;
+    margin: 10px auto 0px 40px;
+}
+#flag {
+    margin: auto 0px auto 0px;
+    padding: 0px 0px 0px 10px;
 }
 #bio {
     background: #8e342d;
     margin: 10px auto 0px 40px;
     border-radius: 10px;
+    width: 200px;
 }
 #bio h5 {
     font-family: monospace;
     background: transparent;
+    box-shadow: 0px 0px 0px 0px black;
     font-size: 1em;
     margin: 2px;
     padding: 2px 5px;
@@ -83,9 +95,30 @@ body {
         display: none !important;
     }
 }
+
+
+
 .error {
     background: #6a0000;
     border: 1px solid red;
     border-radius: 0px;
     color: red;
+}
+
+.levelBar {
+    background: rgba(0,0,0,0.5);
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+#platonic p {
+    background: #aaffaa;
+    border-radius: 10px;
+    width: 220px;
+    padding: 0px 5px;
+}
+#romantic p {
+    background: transparent;
+    border-radius: 10px;
+    width: 230px;
+    padding: 0px 5px;
 }
