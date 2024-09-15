@@ -1,6 +1,5 @@
 .profilecard {
     background: linear-gradient(315deg, transparent 25px, #eaeaea 0);
-    --accent: brown;
 }
 .profilecard .content {
     display: flex;

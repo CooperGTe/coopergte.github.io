@@ -9,6 +9,7 @@ body {
     -mox-box-sizing: border-box;
     -webkit-box-sizing: border-box; 
     box-sizing: border-box;
+    overflow-anchor: none;
 }
 #navigator p {
     text-decoration: bold;
@@ -50,7 +51,7 @@ body {
   border-left: 20px solid coral;
 }
 
-#headdiv {
+#topBar {
     display: flex;
     flex-direction: row;
     order: 1;
@@ -60,7 +61,7 @@ body {
     z-index: 1001;
     position: fixed;
 }
-#headdiv button {
+#topBar button {
     min-width: 1.5em;
     min-height: 1.5em;
     background:transparent;
@@ -74,19 +75,14 @@ body {
     background-size: cover;
 }
 .navhide {
-  margin: 0px;
-  background: rgba(255,255,255,0.05);
-  padding: 5px 10px;
-  border-radius: 50px;
-  align-content: center;
-  display:flex;
+    margin: 0px;
+    background: rgba(255,255,255,0.05);
+    padding: 5px 10px;
+    border-radius: 50px;
+    align-content: center;
+    display:flex;
 }
-#home-button {
-  background: rgba(255,255,255,0.05);
-  padding: 5px 10px;
-  border-radius: 50px;
-}
-#headdiv a {
+#topBar a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -94,8 +90,82 @@ body {
     margin-bottom: auto;
     margin-top: auto;
 }
-#headdiv #home-button {
-    margin-right: auto;
+#home-button {
+    background: rgba(255,255,255,0.05);
+    padding: 5px 10px;
+    border-radius: 50px;
+}
+#home-button:hover {
+    opacity: 0.5;
+}
+#about-me  {
+    display: inline-block;
+    margin: auto auto auto 0px;
+    padding: 5px 10px;
+    border-radius: 50px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    width: 87px;
+    font-weight: bold;
+    box-shadow: 0px 0px 0px black;
+    transition: background 1s, width 0.5s, border-radius 0.5s, box-shadow 0.5s;
+}
+#about-me:hover {
+    background: #0c0c21;
+    width: 127px;
+    color: grey;
+    box-shadow: 0px -10px 10px rgba(0,0,0,0.5);
+    z-index: 1002;
+    border-radius: 10px 10px 0px 0px;
+}
+#about-me-dropdown {
+    height:0px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin: 5px 0px 0px -10px;
+    background: #0c0c21;
+    z-index: 2;
+    overflow: hidden;
+    border-radius: 0px;
+    width: 87px;
+    transition: width 0.5s, height 0.5s, box-shadow 0.5s, border-radius 0.5s;
+    padding: 0px 10px;
+    box-shadow: 0px 0px 0px black;
+}
+#about-me-dropdown a {
+    font-size: 0.8em;
+    margin: 2px 0px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background: transparent;
+    transition: background 0.5s;
+}
+#about-me-dropdown a:hover {
+    background: rgba(255,255,255,0.1)
+}
+#about-me:hover #about-me-dropdown {
+    height: 100px;
+    width: 127px;
+    padding: 10px;
+    box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+    z-index: 1002;
+    border-radius: 0px 0px 10px 10px;
+}
+#topBar #atherionfi {
+    background: rgba(255,255,255,0.05);
+    border-radius: 10px;
+    display: flex;
+}
+#topBar #atherionfi:hover {
+    opacity: 0.8;
+}
+#topBar #atherionfi #icon {
+    background-image: url(/images/AI.ico); 
+    margin: auto 0px auto 10px;
+    width: 20px;
+    height: 20px;
+    background-size: cover;
 }
 
 
@@ -110,7 +180,7 @@ body #content {
     body #content{
         padding-top: 40px;
     }
-    #headdiv {
+    #topBar {
         width: 100vw;
     }
     #navigator {
@@ -131,26 +201,27 @@ body #content {
         transition-timing-function: ease-in;
         margin-left:-230px;
     }
-    #headdiv button {
-        min-width: 2.5em;
-        min-height: 2.5em;
-    }
-    #headdiv a {
+    #topBar a {
         display: none;
     }
-    #headdiv #home-button{
+    #topBar #home-button{
         display: block;
-        margin:auto 0px;
+    }
+    #topBar #about-me {
+        display: none;
+    }
+    #topBar #atherionfi {
+        display: none;
     }
 }
 /* Styles fot tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
-    #headdiv {
+    #topBar {
         margin-right: 10px;
         min-width: 100vw;
         box-shadow: 5px 0px 5px rgba(0,0,0,0.2);
         z-index: 1001;
-        position: fixed;min
+        position: fixed;
     }
     #navigator {
         width: 27%;
@@ -163,6 +234,7 @@ body #content {
         position: fixed;
         z-index: 1000;
         margin-top: 30px;
+        box-shadow: 0px 0px 25px black;
     }
     #navigator.hidden {
         transition-timing-function: ease-in;
@@ -179,7 +251,21 @@ body #content {
         display: flex;
         flex-direction: row;
     }
-    #headdiv {
+    #pseudonav {
+        content: '';
+        order:1;
+        width: 27%;
+        max-width: 230px;
+        transition: margin 0.5s;
+        transition-timing-function: ease-out;
+        margin-left: 0px;
+        overflow: hidden;
+    }
+    #pseudonav.hidden {
+        transition-timing-function: ease-in;
+        margin-left:-230px;
+    }
+    #topBar {
         margin-right: 10px;
         min-width: 100vw;
         box-shadow: 5px 0px 5px rgba(0,0,0,0.2);
@@ -188,24 +274,25 @@ body #content {
     }
     #navigator {
         width: 27%;
-        order: 1;
         max-width: 230px;
-        min-height: 100vh;
+        height: 100vh;
         transition: margin 0.5s;
         transition-timing-function: ease-out;
         margin-left: 0px;
-        overflow: hidden;
-        position: relative;
+        overflow-x: scroll;
+        position: fixed;
+        z-index: 999;
         margin-top: 30px;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.5);
     }
     #navigator.hidden {
         transition-timing-function: ease-in;
         margin-left:-230px;
     }
-
     body #content {
-        width: 70vw;
+        width: 100vw;
         order: 2;
         margin-top: 30px;
+        transition: width 0.5s;
     }
 }

@@ -1,65 +1,49 @@
-@import "../../util/button.css";
-
-.content * {
-    background-color: #080812;
+body {
+    background: #080812
+}
+#content {
+    display:flex;
+    flex-direction: row;
+    background: #080812
+}
+#banner {
+    order: 1;
+    width: 280px;
+    height: 100vh;
+    background: rgba(250,50,25,0.5);
+    display: flex;
+    flex-direction: column;
+}
+#banner img {
+    width: 200px;
+    height: 200px;
+    margin: 50px auto 0px auto;
+    border-radius: 10px;
+    z-index: 2;
+}
+#banner h3 {
+    margin: 10px auto 0px auto;
+    background: #8e342d;
+    border-radius: 10px;
+    padding: 2px 20px 2px 20px;
     color: white;
 }
-.image {
-    background-color: #6fadb7;
-    padding: 2em 0em;
+#banner h5 {
+    margin: 10px auto 0px 40px;
+    background: #8e342d;
+    border-radius: 10px;
+    padding: 2px 20px;
+    color: white;
 }
-.image img {
-    border-radius: 20em;
-    margin-bottom:-6em;
+#bio {
+    background: #8e342d;
+    margin: 10px auto 0px 40px;
+    border-radius: 10px;
 }
-.pfp {
-    padding: 10px;
-    max-width: 10em;
-    max-height: 10em;
-    margin: 0em 2em;
-}
-.image .banner{
-    margin-bottom: -8em;
-    min-height: 10em;
-}
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1.5fr));
-    grid-auto-rows: 0.5fr;
-    grid-gap: 2em;
-    margin: 2em;
-}
-.top {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.1em 1em;
-    border-radius: 1em;
-}
-.top * {
-    background-color: transparent;
-}
-.top h3 {
-    border-bottom: 1px solid grey;
-}
-.top p {
-    border-left: 3px solid grey;
-    padding-left: 10px;
-}
-.right {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.1em 1em;
-    border-radius: 1em;
-}
-.right * {
-    background-color: transparent;
-}
-.bottom {
-    background-color: rgba(255, 255, 255, 0.05);
-    padding: 0.1em 1em;
-    border-radius: 1em;
-}
-.bottom h4 {
-    background-color: transparent;
-}
-.bottom p {
-    background-color: transparent;
+#bio h5 {
+    font-family: monospace;
+    background: transparent;
+    font-size: 1em;
+    margin: 2px;
+    padding: 2px 5px;
 }

@@ -1,4 +1,5 @@
-@import '/util/profilecard.css';
+@import '/util/styles/profilecard.css';
+
 
 
 #content {
@@ -9,6 +10,7 @@
     max-width: cover;
     margin-left: auto;
     margin-right: auto;
+    --accent: brown;
 }
 
 
@@ -16,7 +18,6 @@
     display: flex;
     flex-direction: row;
     padding-left: 10px;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2)
 }
 #title h1 {
     font-size: 2em;
@@ -59,7 +60,7 @@
 }
 #member .title .hazardtape-yellow {
     width: 90px;
-    height: 25px;
+    height: 26px;
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -90,18 +91,78 @@
 
 
 /* FILLER CONTENT */
-#description { grid-area: description; }
-#content-table { grid-area: content-table; }
-#todo { grid-area: todo; }
-
 #sec-content {
     padding: 1em;
-    margin-top: 20px;
     min-width: auto;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2); 
 }
-#sec-content #description {
+#description p {
+    font-family: monospace;
+    font-size: 1.2em;
+    background: rgba(0,0,0,0.05);
+    padding: 5px;
+    border-radius: 10px;
 }
+#description ul {
+    font-family: monospace;
+    font-size: 1.2em;
+    background: rgba(50,50,255,0.1);
+    border-radius: 10px;
+}
+#description::after { 
+    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
+    box-shadow: inset 0 0.8em 0 var(--accent); 
+    background: var(--accent);
+    content: '';
+    display: block;
+    height: 10px;
+}
+#description h3 {
+    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
+    box-shadow: inset 0 0.8em 0 var(--accent);
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+#description h3::after {
+    -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
+    clip-path: polygon(0 100%, 100% 0, 0 0);
+    background: var(--accent);
+    content:'';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+#todo h3 {
+    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
+    box-shadow: inset 0 0.8em 0 var(--accent);
+    display: flex;
+    flex-direction: row;
+    color: white;    
+}
+#todo h3:after {
+    -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
+    clip-path: polygon(0 100%, 100% 0, 0 0);
+    background: var(--accent);
+    content:'';
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+#todo ul {
+    font-family: monospace;
+    font-size: 1.2em;
+    background: rgba(50,50,255,0.1);
+    border-radius: 10px;
+}
+#todo::after {
+    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
+    box-shadow: inset 0 0.8em 0 var(--accent); 
+    background: var(--accent);
+    content: '';
+    display: block;
+    height: 10px;
+}
+
 
 
 
@@ -133,4 +194,5 @@
         height: 80px;
     }
 }
+
 

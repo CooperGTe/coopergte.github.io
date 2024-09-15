@@ -5,175 +5,245 @@
         <meta charset="UTF-8">
     </head>
     <body>
-        <script src="/util/navigator.js"></script>
+        <script src="/util/webpage.js"></script>
         <div id="content">
             <link rel="stylesheet" href="style.css">
-            <h1>Arch Install Manual</h1>
-            <p>this guide is for me and the one who already boot to arch live os</p>
-            <h3>Table Of Content</h3>
-            <ul>
-                <li>Network Configuration</li>
-                <li>Partitioning</li>
-                <li>Formatting</li>
-                <li>Mounting</li>
-                <li>Mirrorlist(rankmirror)</li>
-                <li>Mirrorlist(reflector)</li>
-                <li>Installing The Kernel</li>
-                <li>Installing The Kernel(Offline Way)</li>
-                <li>Generate Fstab</li>
-                <li>Enter The Installed Arch</li>
-                <li>Timezone Setup</li>
-                <li>Locale Setup</li>
-                <li>Host Name</li>
-                <li>Root Password</li>
-                <li>Adding User</li>
-                <li>Add Group To the User</li>
-                <li>Enable Core Service</li>
-                <li>Bootloader Installation</li>
-                <li>Finish up</li>
-            </ul>
-            <div id=step>
-                <h3>Connecting To Network</h3>
-                <h5>(for device with wifi card and not ethernet)</h5>
-                <p id=command>
-                    # iwtcl <br> 
-                    # device list <br>
-                    # station [device] scan <br>
-                    # station [device] get-networks <br>
-                    # station [device] connect [ssid] <br>
-                </p>
+            <div id=table-content>
+                <div id=table-content-pinned>
+                    <h3>Table Of Content</h3>
+                    <ul>
+                        <li>Create The Base</li>
+                        <ul>
+                            <li>Network Configuration</li>
+                            <li>Partitioning</li>
+                            <li>Formatting</li>
+                            <li>Mounting</li>
+                            <li>Mirrorlist(rankmirror)</li>
+                            <li>Mirrorlist(reflector)</li>
+                            <li>Installing The Kernel</li>
+                            <li>Installing The Kernel(Offline Way)</li>
+                            <li>Generate Fstab</li>
+                        </ul>
+                        <li>Setup The System Environment</li>
+                        <ul>
+                            <li>Enter The Installed Arch</li>
+                            <li>Timezone Setup</li>
+                            <li>Locale Setup</li>
+                            <li>Host Name</li>
+                            <li>Root Password</li>
+                            <li>Adding User</li>
+                            <li>Add Group To the User</li>
+                            <li>Enable Core Service</li>
+                            <li>Bootloader Installation</li>
+                            <li>Finish up</li>
+                        </ul>
+                    </ul>
+                </div>
             </div>
-            <div id=step>
-                <h3>Partitioning</h3>
-                <h5>(the easy way)</h5>
-                <p id=command>
-                    # cfdisk
-                </p>
-                <h5>Note: you can check your partition and what u mounting using</h5>
-                <p id=command>
-                    # lsblk
-                </p>
-            </div>
-            <div id=step>
-                <h3>Formatting</h3> 
-                <p id=command>
-                    # mkfs.ext4 [partitition location] <br>
-                    # mkfs.fat -F 32 [boot partition] <br>
-                    # mkswap [swap partition]
-                </p>
-            </div>
-            <div id=step>
-                <h3>Mounting</h3>
-                <p id=command>
-                    # mount [partition location] /mnt <br>
-                    # mkdir -p /mnt/boot/efi <br>
-                    # mount [boot partition]  /mnt/boot/efi <br>
-                    # swapon [swap partition]
-                </p>
-            </div>
-            <div id=step>
-                <h3>Mirrorlist(rankmirror)</h3>
-                <p id=command>
-                    # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup <br>
-                    # sudo pacman -Sy pacman-contrib <br>
-                    # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
-                </p>
-            </div>
-            <div id=step>
-                <h3>Mirrorlist(reflector)</h3>
-                <p id=command>
-                    # sudo reflector --country 'indonesia,singapure,' --verbose --protocol https -f 10 --score 20 --save /etc/pacman.d/mirrorlist
-                </p>
-            </div>
-            <div id=step>
-                <h3>Installing The Kernel</h3>
-                <p id=command>
-                    # pacstrap /mnt base linux linux-firmware base-devel grub efibootmgr neovim networkmanager 
-                </p>
-            </div>
-            <div id=step>
-                <h3>Installing The Kernel(Offline Way)</h3>
-                <p id=command>
-                                    
-                </p>
-            </div>
-            <div id=step>
-                <h3>Generate Fstab</h3>
-                <p id=command>
-                    # genfstab /mnt <br>
-                    # genfstab /mnt > /mnt/etc/fstab <br>
-                    # cat /mnt/etc/fstab 
-                </p>
-            </div>
-            <div id=step>
-                <h3>Enter The Installed Arch</h3>
-                <p id=command>
-                    # arch-chroot /mnt
-                </p>
-            </div>
-            <div id=step>
-                <h3>Timezone Setup</h3>
-                <p id=command>
-                    # ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime <br>
-                    # hwclock --systohc
-                </p>
-            </div>
-            <div id=step>
-                <h3>Locale Setup</h3>
-                <p id=command>
-                    # nvim /etc/locale.gen <br> 
-                    # en_US.UTF-8 UTF-8 <br>
-                    # locale-gen <br>
-                    # nvim /etc/locale.conf <br>
-                    # LANG=en_US.UTF-8
-                </p>
-            </div>
-            <div id=step>
-                <h3>Host name</h3>
-                <p id=command>
-                    # nvim /etc/hostname
-                </p>
-            </div>
-            <div id=step>
-                <h3>Root Password</h3>
-                <p id=command>
-                    # passwd 
-                </p>
-            </div>
-            <div id=step>
-                <h3>Adding User</h3>
-                <p id=command>
-                    # useradd -m -G wheel -s /bin/bash [name] <br>
-                    # passwd [name]
-                </p>
-            </div>
-            <div id=step>
-                <h3>Add Group To the User</h3>
-                <p id=command>
-                    # EDITOR=nvim visudo <br>
-                    # %wheel ALL=(ALL.ALL) ALL
-                </p>
-            </div>
-            <div id=step>
-                <h3>Enable Core Service</h3>
-                <p id=command>
-                    # systemctl enable NetworkManager
-                </p>
-            </div>
-            <div id=step>
-                <h3>Bootloader Installation</h3>
-                <p id=command>
-                    # grub-install /dev/sda <br>
-                    # grub-mkconfig -o /boot/grub/grub.cfg
-                </p>
-            </div>
-            <div id=step>
-                <h3>Finish Up</h3>
-                <p id=command>
-                    # exit <br>
-                    # umount -a <br>
-                    # reboot
-                </p>
+            <div id=main-content>
+                <h1>Arch Install Manual</h1>
+                <p>this guide is for me and the one who already boot to arch live os</p>
+                <h5 id=note>If your PC didn't use UEFI and still use BIOS you can skip a part with EFI in it, Like Partitioning /boot/efi and installing efibootmgr</h5>
+                <div id=step>
+                    <h3>Connecting To Network</h3>
+                    <h5>(SKIP if ur using ethernet, this is for device with wifi card and not ethernet)</h5>
+                    <p id=command>
+                        # iwtcl <br> 
+                        # device list <br>
+                        # station [device] scan <br>
+                        # station [device] get-networks <br>
+                        # station [device] connect [ssid] <br>
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Partitioning</h3>
+                    <h5>(the easy way)</h5>
+                    <h5 id=note>Your Device name may vary depending on what you're using. <br> like for example Hard Disk and SSD through SATA port is label as /dev/sda and SSD through PCI Express Bus is labeled /dev/nvme0n1</h5>
+                    <p id=command>
+                        # cfdisk
+                    </p>
+                    <div id=note>
+                        <h5>Note: you can check your partition and what u mounting using</h5>
+                        <p id=command>
+                            # lsblk
+                        </p>
+                    </div>
+                    <h5 id=note>Don't Add EFI partition if you use BIOS and Although the SWAP partition is optional is it still must UNLESS you know what your doing</h5>
+                    <h5 id=note class=warning>If you Dual Booting Don't use the Windows Boot Partition. You can I guess, but better play safe</h5>
+                    <div id=box>
+                        <h5>The Most Common Partition Layout</h5>
+                        <ol>
+                            <li>partition for efi(512MiB)</li>
+                            <li>partition for swap(4G)</li>
+                            <li>partition for root</li>
+                            <li>partition for home</li>
+                        </ol>
+                    </div>
+                    <div id=box>
+                        <h5>Minimal Partition</h5>
+                        <ol>
+                            <li>partition for efi</li>
+                            <li>partition for root</li>
+                        </ol>
+                    </div>
+                </div>
+                <div id=step>
+                    <h3>Formatting</h3> 
+                    <h5 id=note>I don't wanna explain how to format every type of filesystem out there. <br>but i will tell you how to format for this exact purpose</h5>
+                    <h5>First. We Gonna Format the Root Directory</h5>
+                    <p id=command>
+                        # mkfs.ext4 /dev/[partitition location]
+                    </p>
+                    <h5 id=note>Also the Home Partition if you make that</h5>
+                    <h5>Then Format the bootloader</h5>
+                    <h5 id=note class=important>If you using the existing EFI partition, DON'T REFORMAT IT, reformatting it can destroy the boot loaders of other installed operating systems.</h5>
+                    <p id=command>
+                        # mkfs.fat -F 32 /dev/[boot partition] <br>
+                    </p>
+                    <h5>Last one is the SWAP</h5>
+                    <p id=command>
+                        # mkswap /dev/[swap partition]
+                    </p>
+                    <h5>Don't Forget to enable it</h5>
+                    <p id=command>
+                        # swapon /dev/[swap partition]
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Mounting</h3>
+                    <h5 id=note>so in order to interact with partition that u just create you have to mount it first in /mnt(mnt short for mount)</h5>
+                    <p id=command>
+                        # mount /dev/[partition location] /mnt <br>
+                    </p>
+                    <div id=note>
+                        <h5>if u have home partition seperated, dont forget to also mount it</h5>
+                        <p id=command>
+                            # mkdir -p /mnt/home <br>
+                            # mount /dev[home partition] /mnt/home
+                        </p>
+                    </div>  
+                    <h5 id=note class=warning>mounting boot efi partition is only for the one who already create it</h5>
+                    <div id=note>
+                        <h5>before mounting the boot EFI, first we need to create the Directory to actually mount it</h5>
+                        <p id=command>
+                            # mkdir -p /mnt/boot/efi <br>
+                        </p>
+                    </div>
+                    <p id=command>
+                        # mount [boot partition]  /mnt/boot/efi <br>
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Mirrorlist(rankmirror)</h3>
+                    <h5 id=note>this command is just to take existing mirrorlist and rank them. not creating a new one like reflector</h5>
+                    <p id=command>
+                        # cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup <br>
+                        # rankmirrors -n 6 /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist
+                    </p>
+                    <div id=note class=warning>    
+                        <h5>if rankmirrors command failed, try to update the pacman-contrib first</h5>
+                        <p id=command>
+                        # sudo pacman -Sy pacman-contrib
+                        </p>
+                    </div>
+                </div>
+                <div id=step>
+                    <h3>Mirrorlist(reflector)</h3>
+                    <h5 id=note>read the manual if u wanna full explaination but this is my command for reflector setup</h5>
+                    <p id=command>
+                        # sudo reflector --country 'indonesia,singapure,' --verbose --protocol https -f 10 --score 20 --save /etc/pacman.d/mirrorlist
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Installing The Kernel</h3>
+                    <p id=command>
+                        # pacstrap /mnt base linux linux-firmware base-devel grub efibootmgr neovim networkmanager 
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Installing The Kernel(Offline Way)</h3>
+                    <p id=command>
+                                        
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Generate Fstab</h3>
+                    <p id=command>
+                        # genfstab /mnt <br>
+                        # genfstab /mnt > /mnt/etc/fstab <br>
+                        # cat /mnt/etc/fstab 
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Enter The Installed Arch</h3>
+                    <p id=command>
+                        # arch-chroot /mnt
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Timezone Setup</h3>
+                    <p id=command>
+                        # ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime <br>
+                        # hwclock --systohc
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Locale Setup</h3>
+                    <p id=command>
+                        # nvim /etc/locale.gen <br> 
+                        # en_US.UTF-8 UTF-8 <br>
+                        # locale-gen <br>
+                        # nvim /etc/locale.conf <br>
+                        # LANG=en_US.UTF-8
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Host name</h3>
+                    <p id=command>
+                        # nvim /etc/hostname
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Root Password</h3>
+                    <p id=command>
+                        # passwd 
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Adding User</h3>
+                    <p id=command>
+                        # useradd -m -G wheel -s /bin/bash [name] <br>
+                        # passwd [name]
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Add Group To the User</h3>
+                    <p id=command>
+                        # EDITOR=nvim visudo <br>
+                        # %wheel ALL=(ALL.ALL) ALL
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Enable Core Service</h3>
+                    <p id=command>
+                        # systemctl enable NetworkManager
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Bootloader Installation</h3>
+                    <p id=command>
+                        # grub-install /dev/sda <br>
+                        # grub-mkconfig -o /boot/grub/grub.cfg
+                    </p>
+                </div>
+                <div id=step>
+                    <h3>Finish Up</h3>
+                    <p id=command>
+                        # exit <br>
+                        # umount -a <br>
+                        # reboot
+                    </p>
+                </div>
             </div>
         </div>
     </body>
