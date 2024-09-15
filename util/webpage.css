@@ -50,6 +50,14 @@ body {
   background-color: #81623c; 
   border-left: 20px solid coral;
 }
+.navhide {
+    margin: 0px;
+    background: rgba(255,255,255,0.05);
+    padding: 5px 10px;
+    border-radius: 50px;
+    align-content: center;
+    display:flex;
+}
 
 #topBar {
     display: flex;
@@ -60,6 +68,7 @@ body {
     padding: 0.2em;
     z-index: 1001;
     position: fixed;
+    --animation-speed: 0.1s;
 }
 #topBar button {
     min-width: 1.5em;
@@ -73,14 +82,6 @@ body {
     background-image: url('/images/menu.svg');
     background-repeat: no-repeat;
     background-size: cover;
-}
-.navhide {
-    margin: 0px;
-    background: rgba(255,255,255,0.05);
-    padding: 5px 10px;
-    border-radius: 50px;
-    align-content: center;
-    display:flex;
 }
 #topBar a {
     color: white;
@@ -98,6 +99,7 @@ body {
 #home-button:hover {
     opacity: 0.5;
 }
+
 #about-me  {
     display: inline-block;
     margin: auto auto auto 0px;
@@ -108,7 +110,7 @@ body {
     width: 87px;
     font-weight: bold;
     box-shadow: 0px 0px 0px black;
-    transition: background 1s, width 0.5s, border-radius 0.5s, box-shadow 0.5s;
+    transition: background var(--animation-speed), width var(--animation-speed), border-radius var(--animation-speed), box-shadow var(--animation-speed);
 }
 #about-me:hover {
     background: #0c0c21;
@@ -127,9 +129,9 @@ body {
     background: #0c0c21;
     z-index: 2;
     overflow: hidden;
-    border-radius: 0px;
+    border-radius: 10px;
     width: 87px;
-    transition: width 0.5s, height 0.5s, box-shadow 0.5s, border-radius 0.5s;
+    transition: width var(--animation-speed), height var(--animation-speed), box-shadow var(--animation-speed), border-radius var(--animation-speed);
     padding: 0px 10px;
     box-shadow: 0px 0px 0px black;
 }

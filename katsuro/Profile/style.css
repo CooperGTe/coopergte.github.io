@@ -47,3 +47,33 @@ body {
     margin: 2px;
     padding: 2px 5px;
 }
+.context {
+    background: rgba(255,255,255,0.1);
+    padding: 0px 5px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+}
+.context-content {
+    display: none;
+    position: absolute;
+    background: #dfdfff;
+    color: #070718;
+    z-index: 1;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 25px -10px black;
+    width: 20em;
+}
+.context:hover > .context-content {
+    display: block;
+}
+.context-content:hover {
+    display: none !important;
+}
+.error {
+    background: #6a0000;
+    border: 1px solid red;
+    border-radius: 0px;
+    color: red;
+}

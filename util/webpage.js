@@ -40,6 +40,7 @@ home.textContent = 'HOME'
 ////// About Me
 let aboutMe = document.createElement('div')
 aboutMe.setAttribute('id', 'about-me')
+aboutMe.setAttribute('class', 'dropmenu')
 aboutMe.textContent = 'ABOUT ME'
 let aboutMeDD = document.createElement('div')
 aboutMeDD.setAttribute('id', 'about-me-dropdown')
@@ -57,6 +58,15 @@ aboutMe.appendChild(aboutMeDD)
 aboutMeDD.appendChild(aboutMeProfile)
 aboutMeDD.appendChild(aboutMeFAQ)
 aboutMeDD.appendChild(aboutMeComputer)
+////// School Stuff
+let school = document.createElement('div')
+school.setAttribute('id', 'school')
+school.setAttribute('class', 'dropmenu')
+school.textContent = 'SCHOOL'
+let schoolDD = document.createElement('div')
+schoolDD.setAttribute('id', 'school-dropmenu')
+
+
 
 //// AtherionFi Site Link 
 let atherionfi = document.createElement('div')
