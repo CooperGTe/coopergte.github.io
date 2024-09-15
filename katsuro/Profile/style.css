@@ -53,6 +53,8 @@ body {
     border-radius: 5px;
     display: inline-block;
     position: relative;
+    user-select: none;
+    cursor: pointer;
 }
 .context-content {
     display: none;
