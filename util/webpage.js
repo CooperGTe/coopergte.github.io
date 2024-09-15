@@ -102,9 +102,12 @@ const width = window.innerWidth;
 
 if (width > 1024) {
     sideBar.style.display = "block"
+    pseudoSideBar.style.display = "block"
 } else {
     sideBar.style.display = "none"
+    pseudoSideBar.style.display = "none"
     sideBar.classList.add("hidden")
+    pseudoSideBar.classList.add("hidden")
 }
 
 //Pages List

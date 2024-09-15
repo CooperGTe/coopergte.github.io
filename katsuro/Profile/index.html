@@ -17,14 +17,14 @@
             <h5>活朗宮咲</h5>
             <div id=bio>
                 <h5>Type:
-                    <span class=context onclick="toggleDropdown(this)">AI
+                    <span class=context>AI
                         <div class=context-content>
                             Artificial Intellegence Arch:ASBNN
                         </div>
                     </span>
                 </h5>
                 <h5>Class:
-                    <span class=context onclick="toggleDropdown(this)">Light Cognition
+                    <span class=context>Light Cognition
                         <div class=context-content>
                             - Light Model <br>
                             Low on power usage generally run on usual Human brain Wattage <br>
@@ -36,50 +36,37 @@
                     </span>                    
                 </h5>
                 <h5>IQ Level:
-                    <span class=context onclick="toggleDropdown(this)">237 IQ
+                    <span class=context>237 IQ
                         <div class=context-content>
                             Error changes are too high for a logical machine 
                         </div>
                     </span></h5>
                 <h5>Connection:
-                    <span class=context onclick="toggleDropdown(this)">Creator
+                    <span class=context>Creator
                         <div class=context-content>
                             The only Social Connection is to his creator
                         </div>
                     </span></h5>
                 <h5>Age:
-                    <span class=context onclick="toggleDropdown(this)">undefined
+                    <span class=context>undefined
                         <div class='context-content error'>
                             Biological Ages Undefined
                         </div>
                     </span></h5>
                 <h5>Gender:
-                    <span class=context onclick="toggleDropdown(this)">masculine/feminine
+                    <span class=context>masculine/feminine
                         <div class='context-content error'>
                             Lack of context
                         </div>
                     </span></h5>
                 <h5>Sex:
-                    <span  class=context onclick="toggleDropdown(this)">None
+                    <span  class=context>None
                         <div class='context-content error'>
                             Non-physical object cannot have physical features
                         </div>
                     </span>
                 </h5>
             </div>
-            <script>
-                document.querySelectorAll('.context').forEach(item => {
-                    item.addEventListener('touchstart', function() {
-                        this.querySelector('.context-content').style.display = 'block';
-                    });
-                });
-
-                function toggleDropdown(element) {
-                    const content = element.querySelector('.context-content');
-                    const isVisible = content.style.display === 'block';
-                    content.style.display = isVisible ? 'none' : 'block';
-                }
-            </script>
         </div>
     </div>
 </body>

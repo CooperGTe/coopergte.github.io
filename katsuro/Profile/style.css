@@ -66,12 +66,22 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 25px -10px black;
     width: 20em;
+    top: 100%;
+    left: 0%;
 }
 .context:hover > .context-content {
     display: block;
 }
 .context-content:hover {
     display: none !important;
+}
+@media (max-width: 768px) {
+    .context:active > .context-content {
+        display: block;
+    }
+    .context-content:active {
+        display: none !important;
+    }
 }
 .error {
     background: #6a0000;
