@@ -24,6 +24,7 @@ sideBar.appendChild(document.createElement('br'));
 
 
 
+
 // TOP BAR
 let navhidediv = document.createElement('div');
 navhidediv.setAttribute('class', 'navhide');
@@ -32,11 +33,14 @@ let navhide = document.createElement('button');
 navhide.setAttribute('onclick', 'toggleNavbar()');
 
 
+
 //// Pinned Link
 let home = document.createElement('a');
 home.setAttribute('href', '/');
 home.setAttribute('id', 'home-button')
 home.textContent = 'HOME'
+
+
 ////// About Me
 let aboutMe = document.createElement('div')
 aboutMe.setAttribute('id', 'about-me')
@@ -44,6 +48,7 @@ aboutMe.setAttribute('class', 'dropmenu')
 aboutMe.textContent = 'ABOUT ME'
 let aboutMeDD = document.createElement('div')
 aboutMeDD.setAttribute('id', 'about-me-dropdown')
+aboutMeDD.setAttribute('class', 'dropcontent')
 let aboutMeProfile = document.createElement('a')
 aboutMeProfile.textContent = 'Profile'
 aboutMeProfile.setAttribute('href', '/katsuro/Profile');
@@ -58,6 +63,7 @@ aboutMe.appendChild(aboutMeDD)
 aboutMeDD.appendChild(aboutMeProfile)
 aboutMeDD.appendChild(aboutMeFAQ)
 aboutMeDD.appendChild(aboutMeComputer)
+
 ////// School Stuff
 let school = document.createElement('div')
 school.setAttribute('id', 'school')
@@ -65,7 +71,17 @@ school.setAttribute('class', 'dropmenu')
 school.textContent = 'SCHOOL'
 let schoolDD = document.createElement('div')
 schoolDD.setAttribute('id', 'school-dropmenu')
+schoolDD.setAttribute('class', 'dropcontent')
+let schoolSchedule = document.createElement('a')
+schoolSchedule.textContent = 'Schedule'
+schoolSchedule.setAttribute('href', '/katsuro/Profile');
+let schoolAssignment = document.createElement('a')
+schoolAssignment.textContent = 'Assignments'
+schoolAssignment.setAttribute('href', '/katsuro/Profile');
 
+school.appendChild(schoolDD)
+schoolDD.appendChild(schoolSchedule)
+schoolDD.appendChild(schoolAssignment)
 
 
 //// AtherionFi Site Link 
@@ -90,6 +106,7 @@ navhidediv.appendChild(navhide);
 topBar.appendChild(navhidediv);
 topBar.appendChild(home);
 topBar.appendChild(aboutMe);
+topBar.appendChild(school);
 topBar.appendChild(atherionfi);
 atherionfi.appendChild(atherionfiIcon);
 atherionfi.appendChild(atherionfiText);
