@@ -244,10 +244,10 @@ body #content {
         display: block;
     }
     #topBar #about-me {
-        display: block;
+        display: none;
     }
     #topBar #about-me a {
-        display: block;
+        display: none;
     }
     #topBar #school a {
         display: block;

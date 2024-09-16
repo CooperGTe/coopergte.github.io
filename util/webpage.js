@@ -33,73 +33,72 @@ let navhide = document.createElement('button');
 navhide.setAttribute('onclick', 'toggleNavbar()');
 
 
-
-//// Pinned Link
-let home = document.createElement('a');
-home.setAttribute('href', '/');
-home.setAttribute('id', 'home-button')
-home.textContent = 'HOME'
-
-
-////// About Me
-let aboutMe = document.createElement('div')
-aboutMe.setAttribute('id', 'about-me')
-aboutMe.setAttribute('class', 'dropmenu')
-aboutMe.textContent = 'ABOUT ME'
-let aboutMeDD = document.createElement('div')
-aboutMeDD.setAttribute('id', 'about-me-dropdown')
-aboutMeDD.setAttribute('class', 'dropcontent')
-let aboutMeProfile = document.createElement('a')
-aboutMeProfile.textContent = 'Profile'
-aboutMeProfile.setAttribute('href', '/katsuro/Profile');
-let aboutMeFAQ = document.createElement('a')
-aboutMeFAQ.textContent = 'FAQ'
-aboutMeFAQ.setAttribute('href', '/katsuro/FAQ');
-let aboutMeComputer = document.createElement('a')
-aboutMeComputer.textContent = 'My Computer'
-aboutMeComputer.setAttribute('href', '/katsuro/My Computer');
-
-aboutMe.appendChild(aboutMeDD)
-aboutMeDD.appendChild(aboutMeProfile)
-aboutMeDD.appendChild(aboutMeFAQ)
-aboutMeDD.appendChild(aboutMeComputer)
-
-////// School Stuff
-let school = document.createElement('div')
-school.setAttribute('id', 'school')
-school.setAttribute('class', 'dropmenu')
-school.textContent = 'SCHOOL'
-let schoolDD = document.createElement('div')
-schoolDD.setAttribute('id', 'school-dropmenu')
-schoolDD.setAttribute('class', 'dropcontent')
-let schoolSchedule = document.createElement('a')
-schoolSchedule.textContent = 'Schedule'
-schoolSchedule.setAttribute('href', '/katsuro/Profile');
-let schoolAssignment = document.createElement('a')
-schoolAssignment.textContent = 'Assignments'
-schoolAssignment.setAttribute('href', '/katsuro/Profile');
-
-school.appendChild(schoolDD)
-schoolDD.appendChild(schoolSchedule)
-schoolDD.appendChild(schoolAssignment)
+    //// Home
+    let home = document.createElement('a');
+    home.setAttribute('href', '/');
+    home.setAttribute('id', 'home-button')
+    home.textContent = 'HOME'
 
 
-//// AtherionFi Site Link 
-let atherionfi = document.createElement('div')
-atherionfi.setAttribute('id', 'atherionfi')
+    ////// About Me
+    let aboutMe = document.createElement('div')
+    aboutMe.setAttribute('id', 'about-me')
+    aboutMe.setAttribute('class', 'dropmenu')
+    aboutMe.textContent = 'ABOUT ME'
+        let aboutMeDD = document.createElement('div')
+        aboutMeDD.setAttribute('id', 'about-me-dropdown')
+        aboutMeDD.setAttribute('class', 'dropcontent')
+            let aboutMeProfile = document.createElement('a')
+            aboutMeProfile.textContent = 'Profile'
+            aboutMeProfile.setAttribute('href', '/katsuro/Profile');
+            let aboutMeFAQ = document.createElement('a')
+            aboutMeFAQ.textContent = 'FAQ'
+            aboutMeFAQ.setAttribute('href', '/katsuro/FAQ');
+            let aboutMeComputer = document.createElement('a')
+            aboutMeComputer.textContent = 'My Computer'
+            aboutMeComputer.setAttribute('href', '/katsuro/My Computer');
 
-let atherionfiIcon = document.createElement('div')
-atherionfiIcon.setAttribute('id', 'icon')
+    aboutMe.appendChild(aboutMeDD)
+    aboutMeDD.appendChild(aboutMeProfile)
+    aboutMeDD.appendChild(aboutMeFAQ)
+    aboutMeDD.appendChild(aboutMeComputer)
 
-let atherionfiText = document.createElement('a');
-atherionfiText.setAttribute('href', 'https://atherionfi.github.io')
-atherionfiText.textContent = 'AtherionFi Sites'
+    ////// School Stuff
+    let school = document.createElement('div')
+    school.setAttribute('id', 'school')
+    school.setAttribute('class', 'dropmenu')
+    school.textContent = 'SCHOOL'
+        let schoolDD = document.createElement('div')
+        schoolDD.setAttribute('id', 'school-dropmenu')
+        schoolDD.setAttribute('class', 'dropcontent')
+            let schoolSchedule = document.createElement('a')
+            schoolSchedule.textContent = 'Schedule'
+            schoolSchedule.setAttribute('href', '/katsuro/Profile');
+            let schoolAssignment = document.createElement('a')
+            schoolAssignment.textContent = 'Assignments'
+            schoolAssignment.setAttribute('href', '/katsuro/Profile');
+
+    school.appendChild(schoolDD)
+    schoolDD.appendChild(schoolSchedule)
+    schoolDD.appendChild(schoolAssignment)
 
 
-//// Raymond Site Link
-let peco = document.createElement('a');
-peco.setAttribute('href', 'https://raymond145.github.io')
-peco.textContent = '[#] Peco Sites'
+    //// AtherionFi Site Link 
+    let atherionfi = document.createElement('div')
+    atherionfi.setAttribute('id', 'atherionfi')
+
+    let atherionfiIcon = document.createElement('div')
+    atherionfiIcon.setAttribute('id', 'icon')
+
+    let atherionfiText = document.createElement('a');
+    atherionfiText.setAttribute('href', 'https://atherionfi.github.io')
+    atherionfiText.textContent = 'AtherionFi Sites'
+
+
+    //// Raymond Site Link
+    let peco = document.createElement('a');
+    peco.setAttribute('href', 'https://raymond145.github.io')
+    peco.textContent = '[#] Peco Sites'
 
 
 navhidediv.appendChild(navhide);
