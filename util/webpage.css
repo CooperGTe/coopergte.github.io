@@ -232,7 +232,7 @@ body #content {
     .dropcontent a:active, .dropcontent a:hover {
         background: rgba(255,255,255,0.1)
     }
-    .dropmenu:active .dropcontent, .dropmenu:hover .dropcontent {
+    .dropmenu:active > .dropcontent, .dropmenu:hover > .dropcontent {
         height: 100px;
         width: 127px;
         padding: 10px;
