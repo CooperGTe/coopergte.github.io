@@ -90,10 +90,13 @@
     #banner h1 {
         font-size: 2em;
     }
+    #banner p {
+        font-size: 0.75em;
+    }
     #banner .subtitle {
         font-size: 0.8em;
     }
     #planet-info p {
-        width: 340px;
+        width: fit-content;
     }
 }

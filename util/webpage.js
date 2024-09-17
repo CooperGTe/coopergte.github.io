@@ -73,10 +73,10 @@ navhide.setAttribute('onclick', 'toggleNavbar()');
         schoolDD.setAttribute('class', 'dropcontent')
             let schoolSchedule = document.createElement('a')
             schoolSchedule.textContent = 'Schedule'
-            schoolSchedule.setAttribute('href', '/katsuro/Profile');
+            schoolSchedule.setAttribute('href', '/school/schedule');
             let schoolAssignment = document.createElement('a')
             schoolAssignment.textContent = 'Assignments'
-            schoolAssignment.setAttribute('href', '/katsuro/Profile');
+            schoolAssignment.setAttribute('href', '/school/assignment');
 
     school.appendChild(schoolDD)
     schoolDD.appendChild(schoolSchedule)
@@ -128,10 +128,10 @@ if (width > 1024) {
 
 //Pages List
 function pageLists() {
-    return ['/', 'break', '/katsuro/Profile/', '/katsuro/FAQ/', '/katsuro/My%20Computer/', 'break', '/doc_db/Archlinux/', 'break', '/doc_db/schoolhtmltest/','/doc_db/schoolhtmltest1/','/doc_db/schoolhtmltest2/'];
+    return ['/', 'break', '/katsuro/Profile/', '/katsuro/FAQ/', '/katsuro/My%20Computer/', 'break', '/doc_db/Archlinux/', 'break', '/school/schedule/','/school/assignment/', '/doc_db/schoolhtmltest/','/doc_db/schoolhtmltest1/','/doc_db/schoolhtmltest2/'];
 }
 function getPageTexts() {
-    return ['Main Page', 'Profile', 'FAQ', 'My Computer','Arch Linux','pertemuan 1', 'pertemuan 2', 'pertemuan 3']
+    return ['Main Page', 'Profile', 'FAQ', 'My Computer','Arch Linux','Schedule', 'Assignments', 'pertemuan 1', 'pertemuan 2', 'pertemuan 3']
 }
 function getBreakTexts() {
     return ['About Me', 'Linux Related', 'School']
