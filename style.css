@@ -1,198 +1,99 @@
-@import '/util/styles/profilecard.css';
 
-
+@font-face {
+  font-family: 'Protomolecule';
+  src: url('/images/Protomolecule.ttf');
+}
+* {
+    color: #dfdfff;
+}
 
 #content {
-    padding: 20px;
-    -mox-box-sizing: border-box;
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box;
-    max-width: cover;
+    background: #070712;
+    height: 100vh;
+}
+
+#banner {
+    background: #0f0f5f;
+    margin: 0px;
+    padding: 20px 40px;
+}
+#banner h1 {
+    display: flex;
+    color: #dfdfff;
+    font-size: 3em;
+    margin: 10px 0px 0px 0px;
+    padding: 0px;
+    font-family: 'Protomolecule' !important;
+}
+#icon {
+    width: 50px;
+    height: 50px;
+}
+#banner p {
+    color: #8888aa; 
+    margin: 0px;
+    letter-spacing: 2px;
+    font-weight: light;
+}
+#banner .subtitle {
+    display: flex;
+}
+#github-link {
+    display: flex;
+    background: #070712;
+    border-radius: 20px;
+    padding: 0px 10px;
     margin-left: auto;
-    margin-right: auto;
-    --accent: brown;
+}
+#github-link a:hover {
+    color: grey;
+}
+#github-link .favicon {
+    background-image: url(/images/github-favicon.svg);
+    background-size: cover;
+    width: 16px;
+    height: 16px;
+    margin: auto 5px auto 0px;
+}
+#github-link a {
+    text-decoration: none;
 }
 
 
-#title {
-    display: flex;
-    flex-direction: row;
-    padding-left: 10px;
-}
-#title h1 {
-    font-size: 2em;
-    border-bottom: 4px solid coral;
-}
 #main-content {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 2em;
-    justify-content: start;
-}
-
-#pfcard {
-    max-width: 375px;
-    background: linear-gradient(315deg, transparent 10px, rgba(0,0,0,0.05) 0);
-    margin-bottom: 10px;
-}
-#pfcard p {
-    padding: 1em;
-    border-left: 20px solid coral;
-
-}
-#pfcard h3 {
-    font-size: 20px;
-    padding: 0px 0px 10px 10px;
-    border-bottom: 1px solid grey;
-}
-
-
-/* MEMBER STYLING */
-
-#member {
-    background-color: rgba(255,255,255,0.02);
-    padding: 1em;
-    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
-}
-#member .title {
-    display: flex;
-    flex-direction: row;
-}
-#member .title .hazardtape-yellow {
-    width: 90px;
-    height: 26px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-#member .title h3 {
-    background: brown;
-    color: white;
-    padding: 0 10px 0 10px;
-    margin-left: -13px
-}
-
-
-.profilecard {
-    width: 350px;
-    margin-bottom: 30px;
-}
-#member-list img {
-    margin-left: 20px;
-    border-left: 4px solid brown;
-    width: 100px;
-    height: 100px;
-}
-#member-list .info {
-    font-size: 0.8em;
-    color: rgba(0,0,0,0.2);
-    border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-
-
-/* FILLER CONTENT */
-#sec-content {
-    padding: 1em;
-    min-width: auto;
-}
-#description p {
+    background-image: url(/images/leo.jpg);
+    background-size: cover;
+    position: absolute;
+    z-index: 0;
+    background-position: center;
+    width: 100%;
+    height: 60vh;
     font-family: monospace;
-    font-size: 1.2em;
-    background: rgba(0,0,0,0.05);
-    padding: 5px;
-    border-radius: 10px;
 }
-#description ul {
-    font-family: monospace;
-    font-size: 1.2em;
-    background: rgba(50,50,255,0.1);
-    border-radius: 10px;
+#planet-info h5 {
+    position: relative;
+    padding:  0px 20px;
+    margin-bottom: 0px;
+    font-size: 1em;
+    font-family: 'Protomolecule'
 }
-#description::after { 
-    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
-    box-shadow: inset 0 0.8em 0 var(--accent); 
-    background: var(--accent);
-    content: '';
-    display: block;
-    height: 10px;
+#planet-info p {
+    margin: 0px 30px;
+    padding: 0px 10px;
+    width: 400px;
+    border-left: 2px solid #dfdfff;
 }
-#description h3 {
-    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
-    box-shadow: inset 0 0.8em 0 var(--accent);
-    display: flex;
-    flex-direction: row;
-    color: white;
-}
-#description h3::after {
-    -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
-    clip-path: polygon(0 100%, 100% 0, 0 0);
-    background: var(--accent);
-    content:'';
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-}
-#todo h3 {
-    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
-    box-shadow: inset 0 0.8em 0 var(--accent);
-    display: flex;
-    flex-direction: row;
-    color: white;    
-}
-#todo h3:after {
-    -webkit-clip-path: polygon(100% 100%, 0 0, 100% 0);
-    clip-path: polygon(0 100%, 100% 0, 0 0);
-    background: var(--accent);
-    content:'';
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-}
-#todo ul {
-    font-family: monospace;
-    font-size: 1.2em;
-    background: rgba(50,50,255,0.1);
-    border-radius: 10px;
-}
-#todo::after {
-    -webkit-box-shadow: inset 0 0.8em 0 var(--accent);
-    box-shadow: inset 0 0.8em 0 var(--accent); 
-    background: var(--accent);
-    content: '';
-    display: block;
-    height: 10px;
-}
-
-
-
-
-.hazardtape {
-    height: 25px;
-    width: 110px;
-    margin-top: auto;
-    margin-bottom: auto;
-}
-/* MOBILE UI PATCHES */
-@media(max-width: 768px) {
-    #main-content {
-        grid-template-columns: auto;
+@media (max-width: 768px) {
+    #banner {
+        padding: 20px 20px;
     }
-    .hazardtape {
-        width: 50px;
-        height: 80px;
-        margin-top: auto;
-        margin-bottom: auto;
+    #banner h1 {
+        font-size: 2em;
     }
-    .profilecard {
-        width: 300px;
-        margin-bottom: 30px;
+    #banner .subtitle {
+        font-size: 0.8em;
     }
-    #member-list img {
-        margin: 20px 0px 0px 20px;
-        border-left: 4px solid brown;
-        width: 80px;
-        height: 80px;
+    #planet-info p {
+        width: 340px;
     }
 }
-
-

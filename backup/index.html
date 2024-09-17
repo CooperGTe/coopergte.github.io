@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8"> 
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+</head>
+<body>
+    <script src="/util/webpage.js"></script> 
+    <div id="content">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/util/styles/hazardtape.css">
+        <div id=title>
+            <h1>GT Zeta Epsilon CS-G11</h1>    
+            <div class='hazardtape'></div> 
+        </div>
+        <div id="main-content">
+            <div>
+                <div id="pfcard">
+                    <p><b>About Us</b><br> We're a Computer Science Student from SMKN 2 DEPOK <i>(Not Involved)</i></p>
+                </div>
+                <div id="member">
+                    <div class="title">
+                        <div class="hazardtape-yellow"></div>
+                        <h3>Member Profile</h3>
+                    </div>
+                    <div id="member-list">
+                        <style>
+                            #name {cursor:pointer;}
+                        </style>
+                        <p class="info">(click the name to expand/collapse)</p> 
+                        <div id="katsuro" class='profilecard'>
+                            <div id="name" onclick="toggleParagraph('katsurodesc')">
+                                <div id="boxslice"></div>
+                                <h4>Katsuro Miyazaki</h4> 
+                            </div>
+                            <div id=katsurodesc class="content collapsed">
+                                <img src="/images/katsuro-pfp.png" alt="katsuro">
+                                <p class="desc"><b>Type &nbsp;: Human<br>Class : Angel</b><br>An Internet personality based on KLmodel-AGI </p>
+                            </div>
+                            <div id=footer>
+                            </div>
+                        </div>
+                        <div id="atherionfi" class='profilecard'>
+                            <div id="name" onclick="toggleParagraph('atherionfidesc')">
+                                <div id="boxslice"></div>
+                                <h4>AtherionFi</h4> 
+                            </div>
+                            <div id=atherionfidesc class="content collapsed">
+                                <img src="/images/atherionfi-pfp.png" alt="atherionfi">
+                                <p class="desc">An avid Visual Novel Enjoyer<br>Mindustry Addict</p>
+                            </div>
+                            <div id=footer>
+                                <a href="https://atherionfi.github.io/">Atherion's Sites</a>
+                            </div>
+                        </div>
+                        <div id="rlakhdan" class='profilecard'>
+                            <div id="name" onclick="toggleParagraph('akhdandesc')">
+                                <div id="boxslice"></div>
+                                <h4>Akhdan Ghifari</h4> 
+                            </div>
+                            <div id=akhdandesc class="content collapsed">
+                                <img src="/images/akhdan-pfp.jpg" alt="akhdan">
+                                <p class="desc">Multifandom (not every fandom), roleplayer, private author. <br> Lazy yet capable</p>
+                            </div>
+                            <div id=footer>
+                            </div>
+                        </div>
+                        <div id="peco" class='profilecard'>
+                            <div id="name" onclick="toggleParagraph('pecodesc')">
+                                <div id="boxslice"></div>
+                                <h4>Peco</h4> 
+                            </div>
+                            <div id=pecodesc class="content collapsed">
+                                <img src="/images/peco-pfp.jpg" alt="peco">
+                                <p class="desc"><b>Species: Scub Coral /s</b><br><i>A goofy goober</i><br>I enjoy TV shows, movies, manga, and retro games.</p>
+                            </div>
+                            <div id=footer>
+                                <a href="https://raymond145.github.io/">Peco's Sites</a>
+                            </div>
+                        </div>
+                        <div id="rlabdi" class='profilecard'>
+                            <div id="name" onclick="toggleParagraph('abdidesc')">
+                                <div id="boxslice"></div>
+                                <h4>Yadsa</h4> 
+                            </div>
+                            <div id="abdidesc" class="content collapsed">
+                                <img src="/images/abdi-pfp.png" alt="abdi">
+                                <p class="desc">Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur.</p>
+                            </div>
+                            <div id=footer>
+                                <a href="https://yadsa111.github.io/">Abdi's Sites</a>
+                            </div>
+                        </div>
+                        <script>
+                            function toggleParagraph(id) {
+                                var paragraph = document.getElementById(id);
+                                paragraph.classList.toggle('collapsed');
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div id=sec-content>
+                <div id=description>
+                    <h3><span style="background:brown;"> &nbsp; ZETA EPSILON &nbsp;</span></h3>
+                    <p>GT Zeta Epsilon, GT is short for GregTech, Zeta is a Greek number for seven (7) refering to 7 sky layer in context of Abrahamic Religion that mean Seven Heavens, and Epsilon refering to <a href="https://en.wikipedia.org/wiki/Epsilon_number">Epsilon Number</a>(collection of transfinite numbers whose defining property is that they are fixed points of an exponential map.)  
+                    <br>
+                    <br> GTZE is Private Science Research Institute that work in various Science Field mainly: 
+                    <ul>
+                        <li>Spacetime Contrustions</li>
+                        <li>Transhuman Angelism</li>
+                        <li>Meta Physics Manipulation</li>
+                    </ul>
+                    </p>
+                </div>
+                <div id=todo>    
+                    <h3><span style='background: brown;'>Site ToDo List</span></h3>
+                    <ul>  
+                        <li>add more content</li>
+                        <li>mainpage styling</li>
+                        <li>navbar styling</li>
+                        <li>profile redesign</li>
+                        <li>faq redesign</li>
+                        <li>comspec markup</li>
+                        <li>archlinux content</li>
+                        <li>more animation~</li>
+                    </ul>            
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
