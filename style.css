@@ -63,17 +63,16 @@
 #main-content {
     background-image: url(/images/leo.jpg);
     background-size: cover;
-    position: absolute;
-    z-index: 0;
     background-position: center;
-    width: 100%;
+    width: -moz-available;
     height: 60vh;
     font-family: monospace;
+    padding: 20px 0px;
 }
 #planet-info h5 {
     position: relative;
     padding:  0px 20px;
-    margin-bottom: 0px;
+    margin: 0px;
     font-size: 1em;
     font-family: 'Protomolecule'
 }
@@ -83,7 +82,18 @@
     width: 400px;
     border-left: 2px solid #dfdfff;
 }
+#description {
+    background-color: #0707125f;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    width: 350px;
+    margin: 50px 50px 10px 50px;
+    padding: 10px;
+}
 @media (max-width: 768px) {
+    #main-content {
+        height: 400px;
+    }
     #banner {
         padding: 20px 20px;
     }
@@ -100,3 +110,10 @@
         width: fit-content;
     }
 }
+@media (max-width: 650px) {
+        #description {
+        width: fit-content;
+        margin: 20px;
+    }
+}
+
