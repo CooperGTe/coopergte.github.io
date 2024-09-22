@@ -1,7 +1,6 @@
-
 @font-face {
   font-family: 'Protomolecule';
-  src: url('/images/Protomolecule.ttf');
+  src: url('/images/Protomolecule.ttf') format('woff');
 }
 * {
     color: #dfdfff;
@@ -9,7 +8,7 @@
 
 #content {
     background: #070712;
-    height: 100vh;
+    overflow: auto;
 }
 
 #banner {
@@ -24,6 +23,7 @@
     margin: 10px 0px 0px 0px;
     padding: 0px;
     font-family: 'Protomolecule' !important;
+    font-weight:  bold;
 }
 #icon {
     width: 50px;
@@ -65,7 +65,9 @@
     background-size: cover;
     background-position: center;
     width: -moz-available;
-    height: 60vh;
+    width: -webkit-fill-available;
+    width: -fill-available;
+    
     font-family: monospace;
     padding: 20px 0px;
 }
@@ -74,12 +76,14 @@
     padding:  0px 20px;
     margin: 0px;
     font-size: 1em;
+    font-weight: lighter;
     font-family: 'Protomolecule'
 }
 #planet-info p {
     margin: 0px 30px;
     padding: 0px 10px;
     width: 400px;
+    font-size: 13px;
     border-left: 2px solid #dfdfff;
 }
 #description {
@@ -89,6 +93,7 @@
     width: 350px;
     margin: 50px 50px 10px 50px;
     padding: 10px;
+    font-size: 12px;
 }
 @media (max-width: 768px) {
     #main-content {
@@ -116,4 +121,7 @@
         margin: 20px;
     }
 }
+
+
+
 
