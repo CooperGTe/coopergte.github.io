@@ -1,0 +1,96 @@
+:root {
+    --fore:       #dfdfff;
+    --dark:       #080812;
+    --mdark:      #0a0a1f;
+    --mid:        #121325;
+    --light:      #222230;
+    --accent:     skyblue;
+    --secondary:  orangered;
+}
+
+button {
+    border: 0px;
+}
+
+/* COLOR */
+.colf {background-color: var(--fore);color: var(--mid)}
+.coll {background-color: var(--light);color: var(--fore)}
+.colm {background-color: var(--mid);color: var(--fore)}
+.colmd {background-color: var(--mdark);color: var(--fore)}
+.cold {background-color: var(--dark);color: var(--fore)}
+.transparen{background-color: transparent}
+
+
+
+/* Object */
+.button-base {
+    font-size: 15px;
+    line-height: 18px;
+}
+.button-base:hover {
+    filter: brightness(80%);
+    transition: 0.5s;
+}
+.box {
+    padding: 5px;
+    border-radius: 10px;
+    margin: 5px;
+    min-width: 20px;
+    min-height: 20px;
+}
+.icon {
+    min-height: 20px;
+    min-width: 20px;
+}
+.barspacer {
+    height: 18px;
+    width: 0.08vw;
+    opacity: 10%;
+}
+
+
+/*+-----------------------------------------+*/
+/*|       Additional Property Rules         |*/
+/*+-----------------------------------------+*/
+
+/* Box Size */
+.hpadding {padding-left: 5px; padding-right: 5px}
+.hmargin {margin-left: 5px; margin-right: 5px}
+.vpadding {padding-top: 5px; padding-bottom: 5px}
+.vmargin {margin-top: 5px; margin-bottom: 5px}
+
+.hpadding2 {padding-left: 10px; padding-right: 10px}
+.hmargin2 {margin-left: 10px; margin-right: 10px}
+.vpadding2 {padding-top: 10px; padding-bottom: 10px}
+.vmargin2 {margin-top: 10px; margin-bottom: 10px}
+
+.full-height {height:100%}
+.full-width {width: 100%}
+
+.fill-width {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+}
+.fill-height {
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
+}
+
+.flex {display: flex}
+/* Object Position */
+.posfixed {position: fixed}
+.vcenter {margin-top: auto; margin-bottom: auto}
+.margin-left-auto {margin-left: auto}
+.margin-right-auto {margin-right: auto}
+/* Decoration */
+.notxtdeco {text-decoration: none; font-weight: bold}
+.rounded-corner {border-radius: 10px}
+
+
+
+
+
+
+
