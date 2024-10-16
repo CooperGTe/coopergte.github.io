@@ -1,0 +1,156 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+.subtext {
+    opacity: 0.3;
+    font-size: 10px;
+}
+.width {
+    width: 800px;
+    display: flex;
+    margin: 0px auto;
+    padding: 50px 0px;
+}
+
+#content {
+    margin-top: 25px;
+}
+
+
+
+/* HEADER */
+
+#banner {
+    background-color: #78a6ff40;
+} 
+
+#title {
+    font-size: 35px;
+    max-width: 450px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #00000020
+}
+#desc {
+    font-size: 15px;
+}
+#bannerImg {
+    width: 200px;
+    margin-left: auto;
+}
+
+
+
+/* WHOS */
+
+#whosimg {
+    border: 1px solid grey;
+    flex: 1;
+    margin: 50px 50px 50px 0px;
+}
+
+#interface {
+    border-radius: 10px;
+    background-color: #ffaaaa30;
+    margin: 50px 0px 50px auto;
+    max-width: 350px;
+    display: flex;
+}
+#interfaceImg {
+    width: 80px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #ffbbbb50;
+    padding-right: 50px;
+}
+#interfaceText {
+    padding: 10px;
+    margin-left: -50px;
+    font-family: monospace;
+}
+
+#creator {
+    border-radius: 10px;
+    background-color: #ffaaaa30;
+    margin: 50px 0px 50px auto;
+    max-width: 350px;
+    display: flex;
+}
+#creatorImg {
+    width: 80px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #ffbbbb50;
+    padding-right: 50px;
+}
+#creatorText {
+    padding: 10px;
+    margin-left: -50px;
+    font-family: monospace;
+}
+
+
+
+/* WHY */ 
+
+#why h3 {
+    padding: 20px;
+}
+#why .width {
+    padding: 0px
+}
+#why .text {
+    background-color: #f0f0f0;
+    padding : 30px;
+    text-align: justify;
+    margin-right: 20px;
+    width: 500px;
+    border-radius: 10px;
+}
+#why #whyimg {
+    flex: 1;
+    border: 1px solid grey
+}
+
+/* SOSIAL */ 
+#socialbox {
+    padding: 20px;
+}
+#social .width {
+    display: block
+}
+#socialbox {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+}
+#socialbox * {
+    text-align: center;
+    background-color: grey;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+/* FOOTER*/
+
+#footer {
+    background-color: #303030;
+    color: #dadaff;
+    padding: 50px 10px;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+
+
+
+#placeholder {
+    width: 800px;
+    height: 300px;
+}
+.placeholder {
+    text-align: center;
+    border: 1px solid grey;
+    background-color: transparent !important;
+}
