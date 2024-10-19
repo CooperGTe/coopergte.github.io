@@ -3,43 +3,91 @@
     padding: 0px;
 }
 .subtext {
-    opacity: 0.3;
+    opacity: 1;
+    color: #aaaaaa;
     font-size: 10px;
 }
-.width {
-    width: 800px;
+.contentSize {
+    width: 70vw;
     display: flex;
     margin: 0px auto;
-    padding: 50px 0px;
+    padding-bottom: 50px;
+}
+@media(max-width: 860px) {
+    .contentSize {
+        width: 90vw;
+    }
+}
+@media(min-width: 2000px) {
+    .contentSize {
+        width: 1280px;
+    }
 }
 
-#content {
-    margin-top: 25px;
-}
 
 
 
 /* HEADER */
 
+
 #banner {
     background-color: #78a6ff40;
+    padding-top: 80px;
 } 
-
 #title {
+    grid-area: title;
     font-size: 35px;
     max-width: 450px;
     margin-bottom: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid #00000020
+    border-bottom: 1px solid #00000020;
+    font-weight: 400;
 }
 #desc {
+    grid-area: desc;
     font-size: 15px;
 }
+#Bsubtext {
+    grid-area: Bsubtext;
+}
 #bannerImg {
+    grid-area: bannerImg;
     width: 200px;
     margin-left: auto;
+    margin-right: 10px;
 }
 
+#banner .contentSize {
+    display: grid;
+    grid-column-gap: 0px;
+    grid-template-areas:
+        'title bannerImg'
+        'desc bannerImg'
+        'Bsubtext bannerImg'; 
+}
+
+@media(max-width: 768px) {
+    #banner {
+        padding-top: 60px;
+    }
+    #title {
+        max-width: 380px;
+        font-size: 30px;
+    }
+    #bannerImg {
+        width: auto;
+        margin-left: 0px;
+        height: 150px;
+    }
+    #banner .contentSize {
+        padding: 160px;
+        display: grid;
+        grid-template-areas:
+            'bannerImg title'
+            'desc desc'
+            'Bsubtext Bsubtext'; 
+    }
+}
 
 
 /* WHOS */
@@ -53,7 +101,7 @@
 #interface {
     border-radius: 10px;
     background-color: #ffaaaa30;
-    margin: 50px 0px 50px auto;
+    margin: 40px 0px 40px auto;
     max-width: 350px;
     display: flex;
 }
@@ -72,7 +120,7 @@
 #creator {
     border-radius: 10px;
     background-color: #ffaaaa30;
-    margin: 50px 0px 50px auto;
+    margin: 40px 0px 40px auto;
     max-width: 350px;
     display: flex;
 }
@@ -88,6 +136,12 @@
     font-family: monospace;
 }
 
+@media(max-width: 768px) {
+    #whos .contentSize {
+        display: block;
+    }
+}
+
 
 
 /* WHY */ 
@@ -95,8 +149,7 @@
 #why h3 {
     padding: 20px;
 }
-#why .width {
-    padding: 0px
+#why .contentSize {
 }
 #why .text {
     background-color: #f0f0f0;
@@ -115,7 +168,7 @@
 #socialbox {
     padding: 20px;
 }
-#social .width {
+#social .contentSize {
     display: block
 }
 #socialbox {
@@ -153,4 +206,8 @@
     text-align: center;
     border: 1px solid grey;
     background-color: transparent !important;
+}
+
+@media (max-width: 800px) {
+  
 }

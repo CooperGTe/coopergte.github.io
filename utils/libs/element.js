@@ -4,7 +4,7 @@ export function createObject(type,{
     attributes = {}, 
     styles = "", 
     children = [],
-    parent = null 
+    parent = null, 
     }) {
     let element = document.createElement(type)
 
@@ -12,8 +12,13 @@ export function createObject(type,{
         element.setAttribute(key, attributes[key])
     }
     element.textContent = text
-    element.style.cssText = styles
-    element.classList.add(...classes)
+    if (classes > 0) {
+        element.classList.add(...classes)
+    }
+    if (styles) {
+        element.style.cssText = styles
+    }
+
     // Children Warper Function.         CREDIT : CHATGPT
     children.forEach(child => {
         const childElement = 
@@ -21,12 +26,13 @@ export function createObject(type,{
         element.appendChild(childElement);
     });
     // ===================================================
-    if (parent == "body"){
-        document.body.append(element);
+    if (parent == document.body){
+        document.body.prepend(element);
     }
     else if (parent) {
         parent.appendChild(element);
     }
+    return element;
 }
 
 export function createText(content,{ isHTML = false, parent = null, styles = "" } = {}) {
@@ -52,8 +58,4 @@ export function createText(content,{ isHTML = false, parent = null, styles = "" 
     return element;
 }
 
-export function globalStyles(css) {
-    const style = document.createElement('style');
-    style.textContent = css; 
-    document.head.appendChild(style); 
-}
+
