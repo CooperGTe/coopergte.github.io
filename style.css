@@ -13,9 +13,9 @@
     margin: 0px auto;
     padding-bottom: 50px;
 }
-@media(max-width: 860px) {
+@media(max-width: 1000px) {
     .contentSize {
-        width: 90vw;
+        width: 80vw;
     }
 }
 @media(min-width: 2000px) {
@@ -68,7 +68,7 @@
 
 @media(max-width: 768px) {
     #banner {
-        padding-top: 60px;
+        padding-top: 100px;
     }
     #title {
         max-width: 380px;
@@ -96,6 +96,11 @@
 
 /* WHOS */
 
+#whos .contentSize {
+    display:  block;
+}
+
+
 #whosimg {
     border: 1px solid grey;
     flex: 1;
@@ -105,7 +110,6 @@
 #interface {
     border-radius: 10px;
     background-color: #ffaaaa30;
-    margin: 40px 0px 40px auto;
     max-width: 350px;
     display: flex;
 }
@@ -124,7 +128,6 @@
 #creator {
     border-radius: 10px;
     background-color: #ffaaaa30;
-    margin: 40px 0px 40px auto;
     max-width: 350px;
     display: flex;
 }
@@ -138,12 +141,6 @@
     padding: 10px;
     margin-left: -50px;
     font-family: monospace;
-}
-
-@media(max-width: 768px) {
-    #whos .contentSize {
-        display: block;
-    }
 }
 
 

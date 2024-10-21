@@ -12,7 +12,7 @@ export function createObject(type,{
         element.setAttribute(key, attributes[key])
     }
     element.textContent = text
-    if (classes > 0) {
+    if (classes != 0) {
         element.classList.add(...classes)
     }
     if (styles) {
@@ -32,6 +32,7 @@ export function createObject(type,{
     else if (parent) {
         parent.appendChild(element);
     }
+    console.log(element)
     return element;
 }
 
