@@ -51,9 +51,10 @@ export function createText(content,{ isHTML = false, parent = null, styles = "" 
     else if (parent) {
         parent.appendChild(element);
     }
-
-
-    element.style.cssText = styles
+    
+    if (styles) {
+        element.style.cssText = styles
+    }
 
     return element;
 }

@@ -14,7 +14,8 @@ let sideBar = createObject('div',{
     children: [
         createObject('div',{
             attributes: {'id': 'toggleSideBar', 'onClick': 'toggleSideBar()'} 
-        })
+        }),
+        createText('peek a boo!',{})
     ]
 })
 let pseudoSideBar = createObject('div',{

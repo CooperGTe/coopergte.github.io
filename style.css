@@ -32,7 +32,7 @@
 
 #banner {
     background-color: #78a6ff40;
-    padding-top: 80px;
+    padding-top: 30px;
 } 
 #title {
     grid-area: title;
@@ -80,7 +80,6 @@
         height: 150px;
     }
     #banner .contentSize {
-        padding: 160px;
         display: grid;
         grid-template-areas:
             'bannerImg title'
@@ -88,7 +87,12 @@
             'Bsubtext Bsubtext'; 
     }
 }
-
+@media(min-width: 768px) {
+    #banner .contentSize {
+        max-width: 800px;
+        padding: 100px;
+    }
+}
 
 /* WHOS */
 
