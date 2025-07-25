@@ -1,0 +1,211 @@
+         1ms [INFO]  selected pixel format: Xrgb
+       518ms [INFO]  BumpPool with: 1 buffers. Size: 4098Kb
+       528ms [ERROR] We failed to find wayland buffer with id: 11. This should be impossible.
+ 136492558ms [INFO]  Removed socket at /run/user/1000/swww-wayland-1.sock
+Error: RustixIoErrno(Os { code: 9, kind: Uncategorized, message: "Bad file descriptor" })
+         0ms [INFO]  selected pixel format: Xrgb
+       425ms [INFO]  BumpPool with: 1 buffers. Size: 4098Kb
+       436ms [ERROR] We failed to find wayland buffer with id: 11. This should be impossible.
+  18522832ms [INFO]  Removed socket at /run/user/1000/swww-wayland-1.sock
+Error: RustixIoErrno(Os { code: 9, kind: Uncategorized, message: "Bad file descriptor" })
+         0ms [INFO]  selected pixel format: Xrgb
+        99ms [INFO]  BumpPool with: 1 buffers. Size: 4098Kb
+       109ms [ERROR] We failed to find wayland buffer with id: 11. This should be impossible.
+[LOG] Registered timeout rule for 150s:
+      on-timeout: brightnessctl -s set 10
+      on-resume: brightnessctl -r
+[LOG] Registered timeout rule for 150s:
+      on-timeout: brightnessctl -sd rgb:kbd_backlight set 0
+      on-resume: brightnessctl -rd rgb:kbd_backlight
+[LOG] Registered timeout rule for 330s:
+      on-timeout: hyprctl dispatch dpms off
+      on-resume: hyprctl dispatch dpms on
+[LOG]   | got iface: wl_seat v9
+[LOG]    > Bound to wl_seat v9
+[LOG]   | got iface: wl_data_device_manager v3
+[LOG]   | got iface: wl_compositor v6
+[LOG]   | got iface: wl_subcompositor v1
+[LOG]   | got iface: wl_shm v1
+[LOG]   | got iface: wp_viewporter v1
+[LOG]   | got iface: wp_tearing_control_manager_v1 v1
+[LOG]   | got iface: wp_fractional_scale_manager_v1 v1
+[LOG]   | got iface: zxdg_output_manager_v1 v3
+[LOG]   | got iface: wp_cursor_shape_manager_v1 v1
+[LOG]   | got iface: zwp_idle_inhibit_manager_v1 v1
+[LOG]   | got iface: zwp_relative_pointer_manager_v1 v1
+[LOG]   | got iface: zxdg_decoration_manager_v1 v1
+[LOG]   | got iface: wp_alpha_modifier_v1 v1
+[LOG]   | got iface: zwlr_gamma_control_manager_v1 v1
+[LOG]   | got iface: ext_foreign_toplevel_list_v1 v1
+[LOG]   | got iface: zwp_pointer_gestures_v1 v3
+[LOG]   | got iface: zwlr_foreign_toplevel_manager_v1 v3
+[LOG]   | got iface: zwp_keyboard_shortcuts_inhibit_manager_v1 v1
+[LOG]   | got iface: zwp_text_input_manager_v1 v1
+[LOG]   | got iface: zwp_text_input_manager_v3 v1
+[LOG]   | got iface: zwp_pointer_constraints_v1 v1
+[LOG]   | got iface: zwlr_output_power_manager_v1 v1
+[LOG]   | got iface: xdg_activation_v1 v1
+[LOG]   | got iface: ext_idle_notifier_v1 v2
+[LOG]    > Bound to ext_idle_notifier_v1 v2
+[LOG]   | got iface: hyprland_lock_notifier_v1 v1
+[LOG]    > Bound to hyprland_lock_notifier_v1 v1
+[LOG]   | got iface: ext_session_lock_manager_v1 v1
+[LOG]   | got iface: zwp_input_method_manager_v2 v1
+[LOG]   | got iface: zwp_virtual_keyboard_manager_v1 v1
+[LOG]   | got iface: zwlr_virtual_pointer_manager_v1 v2
+[LOG]   | got iface: zwlr_output_manager_v1 v4
+[LOG]   | got iface: org_kde_kwin_server_decoration_manager v1
+[LOG]   | got iface: hyprland_focus_grab_manager_v1 v1
+[LOG]   | got iface: zwp_tablet_manager_v2 v1
+[LOG]   | got iface: zwlr_layer_shell_v1 v5
+[LOG]   | got iface: wp_presentation v1
+[LOG]   | got iface: xdg_wm_base v6
+[LOG]   | got iface: zwlr_data_control_manager_v1 v2
+[LOG]   | got iface: zwp_primary_selection_device_manager_v1 v1
+[LOG]   | got iface: xwayland_shell_v1 v1
+[LOG]   | got iface: zwlr_screencopy_manager_v1 v3
+[LOG]   | got iface: hyprland_toplevel_export_manager_v1 v2
+[LOG]   | got iface: hyprland_toplevel_mapping_manager_v1 v1
+[LOG]   | got iface: hyprland_global_shortcuts_manager_v1 v1
+[LOG]   | got iface: xdg_wm_dialog_v1 v1
+[LOG]   | got iface: wp_single_pixel_buffer_manager_v1 v1
+[LOG]   | got iface: wp_security_context_manager_v1 v1
+[LOG]   | got iface: hyprland_ctm_control_manager_v1 v2
+[LOG]   | got iface: hyprland_surface_manager_v1 v2
+[LOG]   | got iface: wp_content_type_manager_v1 v1
+[LOG]   | got iface: xdg_toplevel_tag_manager_v1 v1
+[LOG]   | got iface: xdg_system_bell_v1 v1
+[LOG]   | got iface: wp_color_manager_v1 v1
+[LOG]   | got iface: wp_drm_lease_device_v1 v1
+[LOG]   | got iface: wp_linux_drm_syncobj_manager_v1 v1
+[LOG]   | got iface: wl_drm v2
+[LOG]   | got iface: zwp_linux_dmabuf_v1 v5
+[LOG]   | got iface: wl_output v4
+[LOG] found 3 rules
+[LOG] wayland done, registering dbus
+[LOG] Sleep inhibition enabled
+[LOG] Using dbus path /org/freedesktop/login1/session/_32
+[ERR] Couldn't connect to session dbus
+err: [org.freedesktop.DBus.Error.FileExists] Failed to request bus name (File exists)
+[LOG] Inhibited sleep with fd 10
+[LOG] Idled: rule 5643a22dc000
+[LOG] Running brightnessctl -s set 10
+[LOG] Executing brightnessctl -s set 10
+[LOG] Process Created with pid 4152678
+[LOG] Idled: rule 5643a22dc048
+[LOG] Running brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Executing brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Process Created with pid 4152680
+Device 'rgb:kbd_backlight' not found.
+Updated device 'amdgpu_bl1':
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 10 (4%)
+	Max brightness: 255
+
+[LOG] Idled: rule 5643a22dc090
+[LOG] Running hyprctl dispatch dpms off
+[LOG] Executing hyprctl dispatch dpms off
+[LOG] Process Created with pid 4155641
+ok
+[LOG] Resumed: rule 5643a22dc000
+[LOG] Running brightnessctl -r
+[LOG] Executing brightnessctl -r
+[LOG] Process Created with pid 4183884
+[LOG] Resumed: rule 5643a22dc048
+[LOG] Running brightnessctl -rd rgb:kbd_backlight
+[LOG] Executing brightnessctl -rd rgb:kbd_backlight
+[LOG] Process Created with pid 4183886
+[LOG] Resumed: rule 5643a22dc090
+[LOG] Running hyprctl dispatch dpms on
+[LOG] Executing hyprctl dispatch dpms on
+[LOG] Process Created with pid 4183888
+Device 'rgb:kbd_backlight' not found.
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 0 (0%)
+	Max brightness: 255
+
+ok
+[LOG] Idled: rule 5643a22dc000
+[LOG] Running brightnessctl -s set 10
+[LOG] Executing brightnessctl -s set 10
+[LOG] Process Created with pid 22635
+[LOG] Idled: rule 5643a22dc048
+[LOG] Running brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Executing brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Process Created with pid 22637
+Device 'rgb:kbd_backlight' not found.
+Updated device 'amdgpu_bl1':
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 10 (4%)
+	Max brightness: 255
+
+[LOG] Resumed: rule 5643a22dc000
+[LOG] Running brightnessctl -r
+[LOG] Executing brightnessctl -r
+[LOG] Process Created with pid 23484
+[LOG] Resumed: rule 5643a22dc048
+[LOG] Running brightnessctl -rd rgb:kbd_backlight
+[LOG] Executing brightnessctl -rd rgb:kbd_backlight
+[LOG] Process Created with pid 23486
+Device 'rgb:kbd_backlight' not found.
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 0 (0%)
+	Max brightness: 255
+
+[LOG] Idled: rule 5643a22dc000
+[LOG] Running brightnessctl -s set 10
+[LOG] Executing brightnessctl -s set 10
+[LOG] Process Created with pid 41847
+[LOG] Idled: rule 5643a22dc048
+[LOG] Running brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Executing brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Process Created with pid 41849
+Device 'rgb:kbd_backlight' not found.
+Updated device 'amdgpu_bl1':
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 10 (4%)
+	Max brightness: 255
+
+[LOG] Resumed: rule 5643a22dc000
+[LOG] Running brightnessctl -r
+[LOG] Executing brightnessctl -r
+[LOG] Process Created with pid 43867
+[LOG] Resumed: rule 5643a22dc048
+[LOG] Running brightnessctl -rd rgb:kbd_backlight
+[LOG] Executing brightnessctl -rd rgb:kbd_backlight
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 0 (0%)
+	Max brightness: 255
+
+[LOG] Process Created with pid 43903
+Device 'rgb:kbd_backlight' not found.
+[LOG] Idled: rule 5643a22dc000
+[LOG] Running brightnessctl -s set 10
+[LOG] Executing brightnessctl -s set 10
+[LOG] Process Created with pid 82292
+[LOG] Idled: rule 5643a22dc048
+[LOG] Running brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Executing brightnessctl -sd rgb:kbd_backlight set 0
+[LOG] Process Created with pid 82294
+Device 'rgb:kbd_backlight' not found.
+Updated device 'amdgpu_bl1':
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 10 (4%)
+	Max brightness: 255
+
+[LOG] Resumed: rule 5643a22dc000
+[LOG] Running brightnessctl -r
+[LOG] Executing brightnessctl -r
+[LOG] Process Created with pid 84382
+[LOG] Resumed: rule 5643a22dc048
+[LOG] Running brightnessctl -rd rgb:kbd_backlight
+[LOG] Executing brightnessctl -rd rgb:kbd_backlight
+[LOG] Process Created with pid 84384
+Device 'rgb:kbd_backlight' not found.
+Device 'amdgpu_bl1' of class 'backlight':
+	Current brightness: 0 (0%)
+	Max brightness: 255
+
+[CRITICAL] [core] Disconnected from pollfd id 1
+  23017059ms [INFO]  Removed socket at /run/user/1000/swww-wayland-1.sock
+Error: RustixIoErrno(Os { code: 32, kind: BrokenPipe, message: "Broken pipe" })

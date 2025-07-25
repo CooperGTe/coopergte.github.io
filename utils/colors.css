@@ -1,0 +1,23 @@
+body {
+    --fore:#dfdfff;
+    --tone5: #232330;
+    --tone4: #232330;
+    --tone3: #121325;
+    --tone2: #121325;
+    --tone1: #0a0a18;
+    --back:#080812;
+}
+
+body.dark {
+    --fore:black;
+    --tone5: #aaaaaa;
+    --tone4: #c5c5c5;
+    --tone3: #d5d5d5;
+    --tone2: #e8e8e8;
+    --tone1: #efffef;
+    --back:white;
+}
+
+body {
+    visibility: visible;
+}

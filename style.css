@@ -1,214 +1,194 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
-.subtext {
-    opacity: 1;
-    color: #aaaaaa;
-    font-size: 10px;
-}
-.contentSize {
-    width: 70vw;
-    display: flex;
-    margin: 0px auto;
-    padding-bottom: 50px;
-}
-@media(max-width: 1000px) {
-    .contentSize {
-        width: 80vw;
-    }
-}
-@media(min-width: 2000px) {
-    .contentSize {
-        width: 1280px;
-    }
+:root {
+  color: white;
 }
 
-
-
-
-/* HEADER */
-
-
-#banner {
-    background-color: #78a6ff40;
-    padding-top: 30px;
-} 
-#title {
-    grid-area: title;
-    font-size: 35px;
-    max-width: 450px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #00000020;
-    font-weight: 400;
-}
-#desc {
-    grid-area: desc;
-    font-size: 15px;
-}
-#Bsubtext {
-    grid-area: Bsubtext;
-}
-#bannerImg {
-    grid-area: bannerImg;
-    width: 200px;
-    margin-left: auto;
-    margin-right: 10px;
+.mono {
+  font-family: monospace;
 }
 
-#banner .contentSize {
-    display: grid;
-    grid-column-gap: 0px;
-    grid-template-areas:
-        'title bannerImg'
-        'desc bannerImg'
-        'Bsubtext bannerImg'; 
+.sans {
+  font-family: "Courier New";
 }
 
-@media(max-width: 768px) {
-    #banner {
-        padding-top: 100px;
-    }
-    #title {
-        max-width: 380px;
-        font-size: 30px;
-    }
-    #bannerImg {
-        width: auto;
-        margin-left: 0px;
-        height: 150px;
-    }
-    #banner .contentSize {
-        display: grid;
-        grid-template-areas:
-            'bannerImg title'
-            'desc desc'
-            'Bsubtext Bsubtext'; 
-    }
-}
-@media(min-width: 768px) {
-    #banner .contentSize {
-        max-width: 800px;
-        padding: 100px;
-    }
+.udl {
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
-/* WHOS */
-
-#whos .contentSize {
-    display:  block;
+body {
+  margin: 0;
+}
+body > div {
+  /*background-image: url(./src/Assets/minimalist-moon-night-mountains.jpg);
+  background-size: cover;*/
+  height: 100vh;
+  background-color: #000;
+  background-image: radial-gradient(circle, #555 1px, transparent 0);
+  background-size: 5vh 5vh;
+  background-position: center;
 }
 
-
-#whosimg {
-    border: 1px solid grey;
-    flex: 1;
-    margin: 50px 50px 50px 0px;
+#titlescreen {
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+}
+#titlescreen * {
+  margin: unset;
+}
+#titlescreen #title {
+  padding-top: calc(50vh - 4rem);
+  font-size: 4rem;
+  font-family: monospace;
+  user-select: none;
+  color: #ffdddd;
+}
+#titlescreen #title.reveal {
+  padding-top: calc(50vh - 5rem);
+  color: #ddddff;
+  transition: padding 3s ease, color 3s ease;
+}
+#titlescreen #subtitle {
+  color: white;
+  opacity: 0;
+  cursor: pointer;
+  width: 700px;
+  user-select: none;
+  display: none;
+  margin: 0 auto;
+}
+#titlescreen #subtitle.visible {
+  opacity: 1;
+  transition: opacity 3s ease;
 }
 
-#interface {
-    border-radius: 10px;
-    background-color: #ffaaaa30;
-    max-width: 350px;
-    display: flex;
+#mainnavmenu {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: calc(min-content * 2);
+  margin-bottom: -100px;
 }
-#interfaceImg {
-    width: 80px;
-    border-radius: 10px 0px 0px 10px;
-    background-color: #ffbbbb50;
-    padding-right: 50px;
+#mainnavmenu.reveal {
+  margin-bottom: 0;
+  transition: margin 0.5s ease-out;
 }
-#interfaceText {
-    padding: 10px;
-    margin-left: -50px;
-    font-family: monospace;
+#mainnavmenu button {
+  border: unset;
+  border-radius: 20px;
+  padding: 5px 15px;
+  margin: 5px 2px;
+  transition: padding 1s ease;
 }
-
-#creator {
-    border-radius: 10px;
-    background-color: #ffaaaa30;
-    max-width: 350px;
-    display: flex;
+#sidebar {
+  background-color: #050505;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  max-width: 270px;
+  margin-left: -300px;
+  transition: margin 0.5s ease-out;
+  border-right: 1px solid #0a0a0a;
+  z-index: 51;
+  padding: 15px;
+  font-family: "Courier New", Courier, monospace;
 }
-#creatorImg {
-    width: 80px;
-    border-radius: 10px 0px 0px 10px;
-    background-color: #ffbbbb50;
-    padding-right: 50px;
+#sidebar.visible {
+  margin-left: 0px;
 }
-#creatorText {
-    padding: 10px;
-    margin-left: -50px;
-    font-family: monospace;
+#sidebar #sidebarbutton {
+  border: unset;
+  position: fixed;
+  margin: auto 0;
+  margin-left: 290px;
+  transform: rotate(180deg);
+  background-color: rgba(0, 0, 0, 0);
+  transition: transform 0.5s ease, margin 0.5s ease-out;
+  width: 40px;
+  height: 100vh;
 }
-
-
-
-/* WHY */ 
-
-#why h3 {
-    padding: 20px;
+#sidebar #sidebarbutton.on {
+  transform: rotate(0deg) translateX(-10px);
 }
-#why .contentSize {
+#sidebar #sidebarbutton img {
+  background-size: cover;
+  width: 40px;
+  height: 40px;
 }
-#why .text {
-    background-color: #f0f0f0;
-    padding : 30px;
-    text-align: justify;
-    margin-right: 20px;
-    width: 500px;
-    border-radius: 10px;
+#sidebar #profile {
+  background-color: #0a0a0a;
+  display: flex;
+  border-radius: 20px;
 }
-#why #whyimg {
-    flex: 1;
-    border: 1px solid grey
+#sidebar #profile > img {
+  width: 100px;
+  border-radius: 20px;
 }
-
-/* SOSIAL */ 
-#socialbox {
-    padding: 20px;
+#sidebar #profile * {
+  margin: 0 10px;
 }
-#social .contentSize {
-    display: block
+#sidebar #gallerybtn {
+  background: linear-gradient(90deg, #20203f, #2f2f2f);
+  border-radius: 10px;
+  padding: 10px;
 }
-#socialbox {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 20px;
-}
-#socialbox * {
-    text-align: center;
-    background-color: grey;
-    padding: 20px;
-    border-radius: 10px;
-}
-
-
-
-/* FOOTER*/
-
-#footer {
-    background-color: #303030;
-    color: #dadaff;
-    padding: 50px 10px;
-    display: grid;
-    grid-auto-flow: column;
+#sidebar #right {
+  position: fixed;
+  font-size: 0.8em;
+  color: #80809f;
+  bottom: 0;
 }
 
-
-
-
-#placeholder {
-    width: 800px;
-    height: 300px;
+#info {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin: 0 10px 0 10px;
+  margin-top: -30px;
 }
-.placeholder {
-    text-align: center;
-    border: 1px solid grey;
-    background-color: transparent !important;
+#info.reveal {
+  margin-top: 0;
+  transition: margin 0.5s ease-out;
+}
+#info h4 {
+  margin: 0;
+  color: #80809f;
+  font-family: monospace;
 }
 
-@media (max-width: 800px) {
-  
+#cursor {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
 }
+#cursor #pos {
+  font-family: monospace;
+  user-select: none;
+  pointer-events: none;
+  position: fixed;
+  left: calc(var(--x) + 10px);
+  top: calc(var(--y) - 40px);
+  color: #202025;
+}
+#cursor .line1 {
+  width: 100%;
+  position: absolute;
+  top: var(--y);
+  height: 1pt;
+  background-color: #0a0a0a;
+}
+#cursor .line2 {
+  height: 100%;
+  width: 1pt;
+  position: absolute;
+  left: var(--x);
+  background-color: #0a0a0a;
+}
+
+/*# sourceMappingURL=style.css.map */

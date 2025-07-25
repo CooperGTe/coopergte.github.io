@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> PROJECT ZETA EPSILON </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <script type="module" src="/utils/webpage.js" defer></script>
+    <script>
+        (function () {
+            const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+                const [name, value] = cookie.split('=');
+                acc[name] = value;
+                return acc;
+            }, {});
+
+            // Apply dark theme if the theme cookie is set to "dark"
+            if (cookies.theme === "dark") {
+                document.documentElement.classList.add("darktheme"); // Use <html> for global theme
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Optionally check the theme switch checkbox after DOM is loaded
+                    if (document.getElementById("themeswitch")) {
+                        document.getElementById("themeswitch").checked = true;
+                    }
+                });
+            }
+        })();
+    </script>
+    <style>
+        body { 
+            visibility: hidden;
+            background-color: #ffffff;
+        }
+        .darktheme > body {
+            background-color: #080812;
+            transition: visibility 0s linear 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="style.css">
+    <div id=content>
+        test
+    </div>
+</div>
+</body>
+</html>

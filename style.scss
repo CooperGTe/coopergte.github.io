@@ -1,0 +1,197 @@
+
+:root {
+  color:white;
+}
+.mono {
+  font-family: monospace;
+}
+.sans {
+  font-family: "Courier New";
+}
+.udl {
+  border-bottom: 1px solid grey;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+@mixin StartUpReveal($animdir, $objsize) {
+  margin-#{$animdir}: $objsize;
+  &.reveal {
+    margin-#{$animdir}: 0;
+    transition: margin 0.5s ease-out; 
+  }
+}
+
+body {
+  margin: 0;
+  > div {
+    /*background-image: url(./src/Assets/minimalist-moon-night-mountains.jpg);
+    background-size: cover;*/
+    height: 100vh;
+    background-color: #000;
+    background-image: radial-gradient(circle, #555 1px, transparent 0);
+    background-size: 5vh 5vh;
+    background-position: center;
+  }
+}
+
+#titlescreen {
+  z-index: 1;
+  position: fixed;
+  width: 100vw;
+  * {
+    margin: unset;
+  }
+  #title {
+    padding-top: calc(50vh - 4rem);
+    font-size: 4rem;
+    font-family: monospace;
+    user-select: none;
+    color: #ffdddd;
+    &.reveal {
+      padding-top: calc(50vh - 5rem);
+      color: #ddddff;
+      transition: padding 3s ease, color 3s ease;
+    }
+  } 
+  #subtitle {
+    color:white;
+    opacity: 0;
+    cursor: pointer;
+    width: 700px;
+    user-select: none;
+    display: none;
+    margin: 0 auto;
+    &.visible {
+      opacity: 1;
+      transition: opacity 3s ease;
+    }
+  }
+}
+
+#mainnavmenu {
+  position: fixed;
+  bottom:0;
+  right: 0;
+  width: calc(min-content * 2);
+  @include StartUpReveal(bottom, -100px);
+  button {
+    border: unset;
+    border-radius: 20px;
+    padding: 5px 15px;
+    margin: 5px 2px;
+    transition: padding 1s ease;
+    &:hover {
+
+    }
+  }
+}
+
+
+
+
+#sidebar {
+  //background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.75)), url("./src/Assets/sidebarbg.jpg");
+  background-color: #050505;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 300px;
+  max-width: 270px;
+  margin-left: -300px;
+  transition: margin 0.5s ease-out;
+  border-right: 1px solid #0a0a0a;
+  z-index: 51;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  &.visible {
+    margin-left: 0px;
+  }
+  #sidebarbutton{
+    border: unset;
+    position: fixed;
+    margin: auto 0;
+    margin-left: 290px;
+    transform: rotate(180deg);
+    background-color: #00000000;
+    transition: transform 0.5s ease, margin 0.5s ease-out;
+    width: 40px;
+    height: 100vh; 
+    &.on {
+      transform: rotate(0deg) translateX(-10px);
+    }
+    img {
+      background-size: cover;
+      width: 40px;
+      height: 40px; 
+    }
+  }
+  #profile {
+    background-color: #0a0a0a;
+    display: flex;
+    border-radius: 20px;
+    > img {
+      width: 100px;
+      border-radius: 20px;
+    }
+    * {
+      margin: 0 10px;
+    }
+  }
+  #gallerybtn {
+    background: linear-gradient(90deg, #20203f, #2f2f2f);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  #right{
+    position: fixed;
+    font-size: 0.8em;
+    color: #80809f;
+    bottom:0;
+  }
+}
+
+#info {
+  position: fixed;
+  top:0;
+  right:0;
+  margin: 0 10px 0 10px;
+  @include StartUpReveal(top, -30px);
+  h4 {
+    margin: 0;
+    color: #80809f;
+    font-family: monospace;
+  }
+}
+
+#cursor {
+  position: absolute;
+  width: 100vw; 
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  #pos {
+    font-family: monospace;
+    user-select: none;
+    pointer-events: none;
+    position: fixed;
+    left: calc(var(--x) + 10px);
+    top: calc(var(--y) - 40px);
+    color: #202025;
+  }
+  .line1 {
+    width: 100%;
+    position: absolute;
+    top: var(--y);
+    height: 1pt;
+    background-color: #0a0a0a;
+  }
+  .line2{
+    height: 100%;
+    width: 1pt;
+    position: absolute;
+    left: var(--x);
+    background-color: #0a0a0a;
+  }
+}

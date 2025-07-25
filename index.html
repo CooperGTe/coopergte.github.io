@@ -1,67 +1,73 @@
 <!DOCTYPE html>
+
 <html>
 <head>
-    <title>活朗宮咲ウェサイト</title>
+    <title>OMNICHROME</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="UTF-8">
-    <script type="module" src="/utils/webpage.js" defer></script>
-</head>
+    <meta name="" content="">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./style.css">
+    
+</head> 
 <body>
-    <link rel="stylesheet" href="style.css">
-    <div id=content>
-    <div id=banner>
-        <div class=contentSize>
-            <h1 id=title>活朗宮咲のウェブサイトへようこそ!</h1>
-            <p id=desc>
-            Enjoy your stay here, While here have this cookie <br> This is my personal Website made just for fun <br>  
-            </p>
-            <p class=subtext id=Bsubtext>the site still under development</p>
-            <img src="/Assets/katsuro.png" id=bannerImg>
-        </div>
-    </div>
-    <div id=whos>
-        <div class=contentSize>
-            <div id=interface>
-                <img src="/Assets/katsuro-pfp.png" id=interfaceImg>
-                <div id=interfaceText>
-                    <h3>Interface</h3>
-                    <p>活朗宮咲<br>Powered By Arch Linux BTW</p>
+    <div>
+        <section id=cursor>
+            <h4 id=pos></h4>
+            <div class="line1"></div>
+            <div class="line2"></div>
+        </section>
+        <section id="titlescreen">
+            <h1 align=center id=title></h1>
+            <p class=sans align=center id=subtitle onclick="randlog()">System Log: You go on and grow Pass by all that I've known and I'm left here all alone</p>
+        </section>
+        <section id="mainnavmenu">
+            <button>Status</button>
+            <button>Setting</button>
+        </section>
+        <section id=sidebar>
+            <button id=sidebarbutton onclick='document.getElementById("sidebar").classList.toggle("visible");this.classList.toggle("on")'>
+                <img src="./src/Assets/close-arrow-dark.svg">
+            </button>
+            <div id=profile>
+                <img src="./src/Assets/pfp-small.png" alt="katsuro profile picture">
+                <div>
+                    <p class="mono udl">Name: CooperGTe</p>
+                    <p class=mono>Computer Engineer and Artist</p>
+                    <img src="./src/Assets/rect.svg" alt="">
                 </div>
             </div>
-            <div id=creator>
-                <img src="/Assets/pfp.png" id=creatorImg>
-                <div id=creatorText>
-                    <h3>Brainware</h3>
-                    <p>CooperGTe(aliases)<br>totally not a programmer</p>
-                </div>
-            </div>
-        </div>
+            <p>Real-life Profile</p>
+            <a href="https://github.com/CooperGTe">Github</a>
+            <p>Discord</p>
+            <p>Email</p>
+            <p id=gallerybtn>Gallery</p>
+            <h3>Friendly-Link</h3>
+            <ul>
+                <li><a href="https://atherionfi.github.io/">AtherionFi</a></li>
+                <li><a href="https://raymond145.github.io/">Raymond145</a></li>
+                <li><a href="https://yunasha.github.io">Yunasha</a></li>
+            </ul>
+            <h3>Entries</h3>
+            <ul>
+                <li>no entry</li>
+            </ul>
+            <h3>Project</h3>
+            <ul>
+                <li>EndFrameWebUI</li>
+                <h4>Upcoming</h4>
+                <li>Nullshell (QUICKSHELL)</li>
+                <li>EndFrameOS</li>
+                <h4>Archive</h4>
+                <li>Nullshell (ASTAL)</li>
+                <li>...</li>
+            </ul>
+            <p id=right>© CooperGTe. All rights reserved</p>
+        </section>
+        <section id=info>
+            <h4 align=right id=time></h4>
+            <h4>EndFrameWebUI V0 ALPHA-branch</h4>
+        </section>
     </div>
-    <div id=why>
-        <div class=contentSize>
-            <div class=text>
-                <h3>Why did u create this website</h3>
-                <p>first of, it's just desire and passion <br>second, i been in internet since like 2015 or something i couldn't remember it, since then i have very little interaction on the internet(thanks god), internet is mean a lot i meant that A LOT of meaning in my life.. but it just.. couldn't gave anyback to it. that make me think「this internet is dying, what should i do to at least give it a some human content」and here this site</p>
-            </div>
-        </div>
-    </div>
-    <div class=contentSize>
-        <div id=placeholder class=placeholder>placeholder element</div>
-    </div>
-    <div id=social>
-        <div class=contentSize>
-            <h3 align=center>Social</h3>
-            <div id=socialbox>
-                <h5>Github</h5>
-                <h5>Discord</h5>
-                <h5 class=placeholder>idk</h5>
-            </div>
-        </div>
-    </div>
-    <div id=footer align=center>
-        <h5>Website Framework written by me :3 <br> though unfinish :(</h5>
-        <h5>Hosting Service By Github Pages :D  (free wee hoo)</h5>
-    </div>
-</div>
+    <script src=script.js></script>
 </body>
 </html> 

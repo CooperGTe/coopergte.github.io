@@ -1,0 +1,51 @@
+:root {
+    font-size: 1.2rem;
+}
+
+* {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;    
+}
+
+body {
+    background-color: #000000;
+    color: white;
+    margin: 0;
+    background-image: url(/src/Assets/BG.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+p {
+    font-family: monospace;
+    margin: 0;
+    padding: 0
+}
+
+.bloom {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0.25;
+    backdrop-filter: blur(10px);
+    pointer-events: none;
+    z-index: 9999;
+}
+#content {
+    margin: 50px;
+    margin-top: 25vh;
+
+}
+#content::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: inherit;
+  opacity: 0.7; /* Control bloom intensity */
+  filter: blur(8px); /* Adjust blur for glow effect */
+  z-index: -1;
+}
+
