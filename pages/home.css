@@ -1,0 +1,13 @@
+#home {
+    font-family: monospace;
+}
+#hometitle {
+    background-color: #0F0F0F;
+    border-radius: 10px;
+    padding: 10px;
+}
+#hometitle p {
+    font-size: 1.2em;
+}
+#hometitle h1 {
+}

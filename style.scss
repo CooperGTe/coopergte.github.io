@@ -13,6 +13,16 @@
   padding-bottom: 5px;
   margin-bottom: 5px;
 }
+a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 0;
+  display: block;
+}
+svg {
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
 @mixin StartUpReveal($animdir, $objsize) {
   margin-#{$animdir}: $objsize;
   &.reveal {
@@ -21,48 +31,150 @@
   }
 }
 
-body {
+.scroll {
+  overflow: auto;
+  scrollbar-width: thin;                /* Firefox */
+  scrollbar-color: #888 transparent;    /* Firefox */
+  scrollbar-gutter: stable overlay;  /* CSS spec, works in latest Chromium */
+  &::-webkit-scrollbar {
+    width: 8px;      /* thin */
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+html, body {
   margin: 0;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  background-image: url(src/Assets/bg.jpg);
+  background-position: center;
+  background-size: cover;
   > div {
     /*background-image: url(./src/Assets/minimalist-moon-night-mountains.jpg);
     background-size: cover;*/
-    height: 100vh;
-    background-color: #000;
-    background-image: radial-gradient(circle, #555 1px, transparent 0);
+    height: 100%;
+    background-image: radial-gradient(circle, #555 0.05vw, transparent 0);
     background-size: 5vh 5vh;
     background-position: center;
+  }
+}
+
+#contentwindow {
+  width: 90vw;
+  height: 90vh;
+  z-index: 100;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  //initial state
+  top: 200%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #050505;
+  border: 1px solid #0a0a0a;
+  border-radius: 1rem;
+  overflow-y: hidden;
+  transition: top 0.5s cubic-bezier( 0.5, 0, 0.45, 0 );
+  &.visible {
+    top: 50%;
+    transition: top 0.8s cubic-bezier( 0, 0.45, 0, 1.1 );
+  }
+  > :nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    background-color: #1F0F0F;
+    justify-content: space-between;
+    button {
+      margin: 10px auto; 
+      color: white;
+      padding: 0; 
+      border: 0;
+      background-color: #330f1f;
+      width: 30px; 
+      height: 30px; 
+      border-radius: 100%;
+      &:hover {
+        background-color: #aa1122;
+      }
+    }
+    h3 {
+      writing-mode: vertical-rl;
+      padding-top: 20px;
+      margin: 10px;
+      transform: rotate(180deg);
+    }
+  }
+  #content {
+    overflow-y: scroll;
+    height: inherit;
+    padding: 10px;
+  }
+}
+
+#contentbutton {
+  all:unset;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  z-index: 50;
+  transform: translate(-50%,0);
+  user-select: none;
+  color: #E9E9ED; 
+  margin: 10px;
+  transition: margin 0.5s ease;
+  @include StartUpReveal(bottom, -100px);
+  &:hover {
+    margin-bottom: -5px;
+  }
+  h3 {
+    padding: 0;
   }
 }
 
 #titlescreen {
   z-index: 1;
   position: fixed;
-  width: 100vw;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  flex-direction:column;
   * {
     margin: unset;
   }
   #title {
-    padding-top: calc(50vh - 4rem);
     font-size: 4rem;
     font-family: monospace;
     user-select: none;
+    display: inline-block;
     color: #ffdddd;
     &.reveal {
-      padding-top: calc(50vh - 5rem);
       color: #ddddff;
-      transition: padding 3s ease, color 3s ease;
+      transition: margin 3s ease, color 3s ease;
     }
   } 
   #subtitle {
     color:white;
     opacity: 0;
     cursor: pointer;
-    width: 700px;
     user-select: none;
-    display: none;
-    margin: 0 auto;
+    display: inline-block;
+    max-height: 0px;
+    transition: max-height 3s ease;
     &.visible {
       opacity: 1;
+      max-height: auto;
       transition: opacity 3s ease;
     }
   }
@@ -83,11 +195,12 @@ body {
     &:hover {
 
     }
+    svg {
+      vertical-align: middle;
+      transform: translateY(0);
+    }
   }
 }
-
-
-
 
 #sidebar {
   //background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.75)), url("./src/Assets/sidebarbg.jpg");
@@ -96,17 +209,22 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 100dvh;
   width: 300px;
   max-width: 270px;
-  margin-left: -300px;
-  transition: margin 0.5s ease-out;
+  margin-left: -400px;
+  transition: margin 0.5s ease-out, box-shadow 0.5s ease-out;
   border-right: 1px solid #0a0a0a;
-  z-index: 51;
+  z-index: 1000;
   padding: 15px;
   font-family: 'Courier New', Courier, monospace;
+  box-shadow: 0 0 20px 10px black;
+  &.reveal {
+    margin-left: -300px
+  }
   &.visible {
     margin-left: 0px;
+    box-shadow: 0 0 20px 10px black;
   }
   #sidebarbutton{
     border: unset;
@@ -125,9 +243,10 @@ body {
       background-size: cover;
       width: 40px;
       height: 40px; 
+      pointer-events: none; 
     }
   }
-  #profile {
+  #sbprofile {
     background-color: #0a0a0a;
     display: flex;
     border-radius: 20px;
@@ -139,6 +258,9 @@ body {
       margin: 0 10px;
     }
   }
+  #contact {
+    margin: 25px 0;
+  }
   #gallerybtn {
     background: linear-gradient(90deg, #20203f, #2f2f2f);
     border-radius: 10px;
@@ -149,6 +271,19 @@ body {
     font-size: 0.8em;
     color: #80809f;
     bottom:0;
+  }
+}
+#sidebaroverlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 999;
+  opacity: 0;
+  display: none;
+  &.visible {
+    opacity: 20%;
+    display: block
   }
 }
 
