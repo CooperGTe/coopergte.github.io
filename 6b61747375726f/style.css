@@ -1,0 +1,47 @@
+@import "https://www.nerdfonts.com/assets/css/webfont.css";
+
+* {
+    color: #dfdfff;
+    font-family: monospace;
+}
+body {
+    background-color: black;
+}
+.bg {
+    position: fixed;
+   top: 50%;
+    left: 50%;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: 100vh;
+    opacity: 0.5;
+    z-index: -1;
+}
+#content {
+    max-width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 32vh
+}
+.separator {
+    height: 1pt;
+    width: 100%;
+    margin-bottom:12px;
+    background-color: #dfdfff88;
+}
+.sim-id {
+    display: flex;
+    align-items: center;
+    .pic {
+        height: 64px;
+        width: 64px;
+        
+        margin-right: 12px;
+
+        border-style: solid;
+        border-color: #dfdfff88;
+        border-width: 1px;
+        border-radius: 10px 0 10px 0px;
+    }
+}

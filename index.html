@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>EndTerminal</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="" content="">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body style="background-color: black;">
+        <div id="content">
+            <pre id="ascii-bg"></pre>
+
+            <section id="window" style="display:none;">
+                 
+            </section>
+            <section id=header style="display:none;">
+                <div>
+                    <button class=windowb onclick=toggleWindow("updates")>[updates]</button>
+                    <button class=windowb onclick=toggleWindow("setting")>[setting]</button>
+                </div>
+                <p id=dates></p>
+            </section>
+            <section id="terminal">
+                <pre id=termout></pre>
+                <div id=navbtn style="display:none; opacity:0;">
+                    <a href="./Omnichrome_Foundation/">OMNICHROME Foundation</a>
+                    <a href="./Technology/">Technology</a>
+                    <a href="./Webmaster/">Webmaster</a>
+                </div>
+            </section>
+            <section id="footer" style="display:none; opacity:0">
+                <div class="musicplayer">
+                    <audio id=music>
+                        <source src="/src/assets/duvet.mp3" type="audio/mpeg">
+                    </audio>
+                    <div class="control">
+                        <img class="icons" src="/src/assets/music_note.svg" alt="music note icon">
+                        <p>bôa - Duvet</p>
+                        <button id="play">
+                            <img id="controlicon" src="/src/assets/play.svg" alt="Play/Pause">
+                        </button>
+                    </div>
+                    <div class="status">
+                        <input class=slider id="progress" type="range" min="0" max="100" value="0">
+                        <p id="time">0:00 / 0:00</p>
+                        <input class=slider id="volume" type="range" min="0" max="1" step="0.01" value="1">
+                    </div>
+                </div>
+            </section>
+        </div> 
+        <script src=main.js></script>
+    </body>
+    <!-- Why are you reading the landing page? shit boring -->
+</html>
