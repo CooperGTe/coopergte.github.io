@@ -136,9 +136,9 @@ async function start(text) {
         terminalout.textContent = terminalStartUp.replace(/&(\S+)/g, "");
     }
     // initiate blank bg
-    spawnbg("/src/assets/whitespace.txt", true)
+    await spawnbg("/src/assets/whitespace.txt", true)
 
-    spawnbg(currentWallpaper)
+    await spawnbg(currentWallpaper)
     header.style.display = "flex"
     navbtn.style.display = "flex"
     footer.style.display = "block"
