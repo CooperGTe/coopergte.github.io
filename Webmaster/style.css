@@ -224,9 +224,19 @@ background: linear-gradient(90deg, rgba(20, 20, 20, 1) 0%, rgba(20, 20, 20, 1) 2
         width: 100%;
         margin: 10px 0;
     }
+    .skill {
+        margin-top: 20px;
+    }
     .project, .skill {
         border-radius: 20px;
         width: unset;
+    }
+    .footer {
+        img {
+            width: 100%;
+            margin: -10px;
+            border-radius: 10px;
+        }
     }
     textarea {
         overflow-y: hidden;
